@@ -1,0 +1,162 @@
+/* =============================================================================
+ * Waybar Capsule Configuration
+ * =========================================================================== */
+
+/* ────────────────────────────────────────────
+ * Theme Switcher
+ * ──────────────────────────────────────────── */
+/* Active theme: Moondust Dark */
+@import "themes/moondust-dark.css";
+
+/* Alternate options:
+@import "themes/everforest-dark.css";
+*/
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+@keyframes blink-warning {
+    70% { color: @base-bg; }
+    to {
+        color: @base-bg;
+        background-color: @warning;
+    }
+}
+
+@keyframes blink-critical {
+    70% { color: @base-bg; }
+    to {
+        color: @base-bg;
+        background-color: @critical;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
+    font-size: 14px;
+}
+
+/* The whole bar - one continuous translucent capsule */
+#waybar {
+    background-color: rgba(30, 34, 37, 0.85);  /* surface-bg with transparency */
+    border-radius: 20px;
+    border-bottom: 1px solid @border;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tooltip
+ * -------------------------------------------------------------------------- */
+tooltip {
+    background-color: rgba(30, 34, 37, 0.85);
+    border: 1px solid @accent-blue;
+    border-radius: 0px;
+}
+
+tooltip label {
+    color: @text-primary;
+}
+
+/* -----------------------------------------------------------------------------
+ * Universal module defaults
+ * -------------------------------------------------------------------------- */
+#network,
+#idle_inhibitor,
+#backlight,
+#wireplumber,
+#battery,
+#clock,
+#tray,
+#power-profiles-daemon,
+#custom-updates,
+#custom-vpn,
+#custom-power,
+#custom-tray,
+#window {
+    padding: 0.2rem 0.6rem;
+    margin: 2px 0;
+    background-color: transparent;
+    color: @text-secondary;
+    border-radius: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Left: Clock
+ * -------------------------------------------------------------------------- */
+#clock { margin-left: 10px; }
+
+/* -----------------------------------------------------------------------------
+ * Center: Window
+ * -------------------------------------------------------------------------- */
+#window { 
+    font-weight: normal; 
+    color: @text-primary;
+}
+
+/* -----------------------------------------------------------------------------
+ * Right Side Modules
+ * -------------------------------------------------------------------------- */
+
+/* VPN */
+#custom-vpn { color: @accent-blue; }
+
+/* Network */
+#network { color: @accent-slate; }
+#network.disconnected { color: @warning; }
+
+/* Backlight */
+#backlight { color: @text-secondary; }
+
+/* Wireplumber/Audio */
+#wireplumber { color: @text-secondary; }
+#wireplumber.muted { color: @text-muted; }
+
+/* Battery */
+#battery { color: @text-secondary; }
+#battery.warning { color: @warning; }
+#battery.critical { color: @critical; }
+#battery.charging { color: @accent-blue; }
+
+/* Idle inhibitor */
+#idle_inhibitor { color: @text-muted; }
+#idle_inhibitor:hover { color: @accent-blue-hover; }
+#idle_inhibitor.activated { color: @accent-blue; }
+
+/* Power profiles daemon */
+#power-profiles-daemon { color: @text-muted; }
+#power-profiles-daemon:hover { color: @accent-blue-hover; }
+
+/* Tray group */
+#tray {
+    padding: 0 0px;
+    min-height: 0;
+}
+
+#tray > .needs-attention { background-color: @accent-blue-hover; }
+
+#tray menu {
+    background-color: @elevated-bg;
+    color: @text-primary;
+}
+
+#custom-tray {
+    color: @text-muted;
+    transition: 0.2s ease;
+}
+
+#custom-tray:hover { color: @accent-blue; }
+
+/* Power button */
+#custom-power {
+    margin-right: 5px;
+    color: @text-muted;
+}
+
+#custom-power:hover { color: @critical; }

@@ -1,0 +1,44 @@
+# Moondust Fish Theme
+
+# first line chosen to avoid parsing/startup quirks
+fish_color_command 8fafcc
+fish_color_normal 89949a
+fish_color_keyword 6885a1
+fish_color_quote 6885a1
+fish_color_redirection 89949a
+fish_color_end 4d8fdb
+fish_color_error 89949a
+fish_color_param 4d6680
+fish_color_comment 637179
+fish_color_selection 89949a --background=262c31 --bold
+fish_color_search_match 89949a --background=262c31 --bold
+fish_color_operator 235d9f
+fish_color_escape 4d8fdb
+fish_color_autosuggestion 637179
+fish_color_cancel -r
+fish_color_option 4d8fdb
+fish_color_history_current --bold
+fish_color_status 89949a
+fish_color_valid_path --underline
+
+# Prompt colors (from colors.js blue family)
+fish_color_cwd 2769b4
+fish_color_cwd_root 235d9f
+fish_color_host 4d8fdb
+fish_color_host_remote 3a82cf
+fish_color_user 4d8fdb
+
+# Completion pager colors (matching syntaxes.js choice of plain/slate/blue)
+fish_pager_color_background
+fish_pager_color_completion 89949a
+fish_pager_color_description 637179
+fish_pager_color_prefix 4d8fdb --bold --underline
+fish_pager_color_progress 637179 --background=235d9f --bold
+fish_pager_color_secondary_background
+fish_pager_color_secondary_completion 89949a
+fish_pager_color_secondary_description 637179
+fish_pager_color_secondary_prefix 4d8fdb
+fish_pager_color_selected_background --background=262c31
+fish_pager_color_selected_completion 89949a
+fish_pager_color_selected_description 637179
+fish_pager_color_selected_prefix 4d8fdb

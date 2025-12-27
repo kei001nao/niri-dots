@@ -1,0 +1,22 @@
+/* =============================================================================
+ * Waybar Theme: Everforest Dark
+ * =============================================================================
+ * Soft earthy palette — calm greens and browns for low-contrast setups.
+ * Labels and structure match Moondust for consistency.
+ * =========================================================================== */
+
+@define-color base-bg #2B3339;        /* gray[9] - darkest background */
+@define-color surface-bg #323C41;     /* gray[8] - surface background */
+@define-color elevated-bg #3A4348;    /* gray[7] - elevated elements */
+@define-color border #414B50;         /* gray[5] - borders and dividers */
+
+@define-color text-primary #D3C6AA;   /* gray[0] - primary text */
+@define-color text-secondary #A7C080; /* gray[1] - secondary text */
+@define-color text-muted #859289;     /* gray[2] - muted text */
+
+@define-color accent-blue #7FBBB3;    /* blue-green[0] - primary accent */
+@define-color accent-blue-hover #83C092; /* blue-green[1] - hover state */
+@define-color accent-slate #A7C080;   /* slate-green[0] - secondary accent */
+
+@define-color warning #DBBC7F;        /* warm beige for warnings */
+@define-color critical #E67E80;       /* warm red for critical */

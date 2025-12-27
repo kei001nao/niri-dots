@@ -1,0 +1,61 @@
+# =============================================================================
+# Mako Notification Daemon - Moondust Dark Theme
+# =============================================================================
+font=JetBrainsMono Nerd Font 11
+layer=overlay
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+group-by=app-name
+sort=-time
+history=1
+max-history=50
+
+# =============================================================================
+# Moondust Base Colors
+# =============================================================================
+# base-bg:        #161A1D
+# surface-bg:     #1E2225a
+# elevated-bg:    #22272B
+# border:         #343F46
+# text-primary:   #D2D4D5
+# text-secondary: #B1B6B9
+# accent-blue:    #4D8FDB
+# accent-slate:   #B2D0EB
+# critical:       #E67C7C (non-canonical)
+
+# =============================================================================
+# Default notification appearance
+# =============================================================================
+background-color=#161A1DF0
+text-color=#D2D4D5
+border-color=#4D8FDB
+border-size=2
+border-radius=0
+padding=10
+margin=8
+width=320
+height=150
+icons=1
+anchor=top-right
+progress-color=over #4D8FDBAA
+
+# =============================================================================
+# Urgency levels
+# =============================================================================
+[urgency=low]
+background-color=#1E2225F0
+border-color=#343F46
+text-color=#B1B6B9
+
+[urgency=normal]
+background-color=#1E2225F0
+border-color=#4D8FDB
+text-color=#D2D4D5
+
+[urgency=high]
+background-color=#22272BF0
+border-color=#E67C7C
+text-color=#D2D4D5
+default-timeout=0
+ignore-timeout=1

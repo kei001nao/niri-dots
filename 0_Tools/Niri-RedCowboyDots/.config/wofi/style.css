@@ -1,0 +1,53 @@
+* {
+    font-family: "IosevkaTermSlab Nerd Font Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+window {
+    background-color: #581f1f;
+}
+
+#input {
+    margin: 5px;
+    border-radius: 0px;
+    border: none;
+    background-color: #523b3b;
+    color: red;
+}
+
+#inner-box {
+    background-color: #3f2929;
+}
+
+#outer-box {
+    margin: 2px;
+    padding: 10px;
+    background-color: #211c1c;
+}
+
+#scroll {
+    margin: 5px;
+}
+
+#text {
+    padding: 4px;
+    color: rgb(255, 194, 156);
+    margin-left: 6px;
+}
+
+#entry:{
+    margin-left: 6px;
+}
+
+#entry:nth-child(even){
+    background-color: #372626;
+}
+
+#entry:selected {
+    background-color: #6a4c4c;
+}
+
+#text:selected {
+    background: transparent;
+}

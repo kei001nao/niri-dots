@@ -1,0 +1,33 @@
+// color
+layout {
+  border {
+    active-color "#A7C080"
+  }
+
+  insert-hint {
+    color "#2D353B"
+  }
+
+  tab-indicator {
+    active-color "#E67E80E6"
+  }
+
+
+//  shadow {
+//    color "rgba(0, 0, 0, 0.7)"
+//  }
+
+//  background-color "#e4b7f3"
+}
+
+//overview {
+//  backdrop-color "#fff7fb"
+//}
+
+//window-rule {
+//  match is-floating=true
+
+//  border {
+//    active-color "#A7C080"
+//  }
+//}

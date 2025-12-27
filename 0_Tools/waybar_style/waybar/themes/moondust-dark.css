@@ -1,0 +1,19 @@
+/* =============================================================================
+ * Waybar Theme: Moondust Dark
+ * =============================================================================
+ * Based on: https://github.com/vanyauhalin/moondusttheme/
+ * Full palette: https://github.com/vanyauhalin/moondusttheme/blob/main/lib/colors.js
+ * =========================================================================== */
+@define-color base-bg #161A1D;        /* dark background - editor background */
+@define-color surface-bg #1E2225;     /* gray[9] - surface background */
+@define-color elevated-bg #22272B;    /* gray[8] - elevated elements */
+@define-color border #343F46;         /* gray[5] - borders and dividers */
+@define-color text-primary #D2D4D5;   /* gray[0] - primary text */
+@define-color text-secondary #B1B6B9; /* gray[1] - secondary text */
+@define-color text-muted #637179;     /* gray[2] - muted text */
+@define-color accent-blue #2C75C3;    /* blue[2] - primary accent (selection) */
+@define-color accent-blue-hover #4D8FDB; /* blue[0] - hover state (links) */
+@define-color accent-slate #B2D0EB;   /* slate[0] - secondary accent */
+@define-color warning #E8B87E;        /* blue[3] - warnings (canonical) */
+@define-color critical #E67C7C;       /* warm red for critical (non-canonical) */
+@define-color transparent transparent; /* for hover backgrounds */

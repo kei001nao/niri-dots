@@ -1,0 +1,15 @@
+// Output Section
+
+output "eDP-1" {
+    mode "1920x1080@60.002"
+    scale 1
+    position x=1280 y=0
+    transform "normal"  //"90" "fripped"
+    focus-at-startup
+    backdrop-color "#001100"
+
+    hot-corners {
+      // off
+      top-left
+    }
+}

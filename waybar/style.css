@@ -1,0 +1,231 @@
+@import "./colors.css";
+/*
+# black
+color0  {{color0 }}
+color8  {{color8 }}
+
+# red
+color1  {{color1 }}
+color9  {{color9 }}
+
+# green
+color2  {{color2 }}
+color10 {{color10 }}
+
+# yellow
+color3  {{color3 }}
+color11 {{color11 }}
+
+# blue
+color4  {{color4 }}
+color12 {{color12 }}
+
+# magenta
+color5  {{color5 }}
+color13 {{color13 }}
+
+# cyan
+color6  {{color6 }}
+color14 {{color14 }}
+
+# white
+color7  {{color7 }}
+color15 {{color15 }}
+*/
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  /* background: alpha(@background,0.5); */
+  background: alpha(@theme_base_color,0.5);
+}
+
+#custom-cachy:hover,
+/* #cpu:hover, */
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#pulseaudio.sink-muted:hover,
+#custom-powermenu:hover {
+  opacity: 0.6;
+}
+
+/*  #custom-cachy,  */
+#power-profiles-daemon,
+#idle_inhibitor,
+#custom-updates,
+#cpu,
+#clock,
+#mpris,
+#custom-menu,
+#tray,
+#privacy,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#battery,
+#custom-powermenu {
+  color: @color7;  /*white*/
+  padding: 6px 0;
+}
+
+#power-profiles-daemon {
+  padding: 12px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  background-color: transparent;
+}
+#power-profiles-daemon.performance {
+  color: @color1;  /*red*/
+}
+#power-profiles-daemon.balanced {
+  color: @color2;  /*green*/
+}
+#power-profiles-daemon.power-saver {
+  color: @color3;  /*yellow*/
+}
+
+#idle_inhibitor {
+  padding: 6px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  background-color: transparent;
+}
+#idle_inhibitor.activated {
+  color: @color1;  /*red*/
+}
+#idle_inhibitor.deactivated {
+  color: @color3;  /*yellow*/
+}
+
+#custom-updates {
+  padding: 8px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  color: @color1;  /*red*/
+  background-color: transparent;
+}
+#custom-updates.icn {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px -3px;
+  color: @color1;  /*red*/
+  background-color: transparent;
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 0;
+}
+#workspaces button.active,
+#workspaces button.default {
+  color: @color2;  /*green*/
+}
+#workspaces button.empty {
+color: @color1;  /*red*/
+}
+
+#privacy {
+  margin: 4px;
+  color: @color3;
+}
+
+#cpu.percentage {
+  padding: 0px 0;
+}
+
+#clock {
+  color: @color4;  /*blue*/
+}
+#clock.date {
+  color: @color5;  /*magenta*/
+}
+#clock.day {
+  color: @color6;  /*cyan*/
+}
+
+
+#mpris {
+  color: @color3;  /*yellow*/
+}
+
+#network.disabled {
+  color: @color1;  /*red*/
+}
+#network.wifi {
+  color: @color2;  /*green*/
+}
+#network.ethernet {
+  color: @color3;  /*yellow*/
+}
+
+#bluetooth.disabled {
+  color: @color1;  /*red*/
+}
+#bluetooth.connected {
+  color: @color4;  /*blue*/
+}
+
+#pulseaudio.sink-muted:not(.microphone) {
+  color: @color3;  /*yellow*/
+}
+#pulseaudio.microphone.source-muted {
+  color: @color1;  /*red*/
+}
+#pulseaudio.volume {
+  padding: 0px 0px 10px 0px;
+}
+#backlight.percentage {
+  padding: 0px 0px 6px 0px;
+}
+
+#battery.plugged {
+  color: @color4;  /*blue*/
+}
+#battery.charging {
+  color: @color2;  /*green*/
+}
+#battery.critical {
+  color: @color1;  /*red*/
+}
+#battery.percentage {
+  padding: 0px 0px 10px 0px;
+}
+
+
+
+tooltip {
+  background: @background;
+  border: 1px solid @foreground;
+}
+tooltip * {
+  color: @foreground;
+  margin: 2px;
+  background: @background;
+}
+
+#pulseaudio-slider,
+#backlight-slider {
+  min-height: 80px;
+}
+
+#pulseaudio-slider slider,
+#backlight-slider slider {
+  background: transparent;
+}
+
+#pulseaudio-slider trough,
+#backlight-slider trough {
+  min-width: 8px;
+}
+
+#pulseaudio-slider highlight {
+  background: @color4;  /*blue*/
+}
+#backlight-slider highlight {
+  background: @color3;  /*yellow*/
+}

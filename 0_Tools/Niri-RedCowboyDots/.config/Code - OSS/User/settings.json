@@ -1,0 +1,78 @@
+{
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.colorTheme": "365 10-October High Contrast",
+    "workbench.colorCustomizations": {
+        "variables": "#FF0004",
+        "tab.border": "#c6c6c6",
+        "menu.border": "#880c0c",
+        "panel.border": "#880c0c",
+        "focusBorder": "#880c0c",
+        "button.border": "#880c0c",
+        "scrollbarSlider.background": "#a9151580",
+        "scrollbarSlider.hoverBackground": "#880c0c",
+        "button.separator": "#880c0c",
+        "statusBar.border": "#880c0c",
+        "titleBar.border": "#880c0c",
+        "input.border": "#880c0c",
+        "widget.border": "#880c0c",
+        "commandCenter.border": "#880c0c",
+        "activityBar.border": "#880c0c",
+        "editorGroup.border": "#880c0c",
+        "gauge.border": "#880c0c",
+        "simpleFindWidget.sashBorder": "#880c0c",
+        "terminal.border": "#880c0c",
+        "panelTitle.border": "#880c0c",
+        "keybindingLabel.bottomBorder": "#880c0c", 
+        "editor.compositionBorder": "#880c0c",
+        "panelTitle.activeBorder": "#880c0c",
+        "activityBarTop.activeBorder": "#880c0c",
+        "sash.hoverBorder": "#880c0c",
+        "diffEditor.border": "#880c0c",
+        "contrastBorder": "#880c0c",
+        "parameter": "#FF0004",
+        "function": "#FF0004",
+        "method": "#FF0004"
+    },
+    "shader-validator.glsl.targetClient": "OpenGL450",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["keyword.control"], // Targets control keywords (like 'if', 'for')
+                "settings": {
+                    "foreground": "#d57070", // Changes them to red
+                    "fontStyle": "bold" // Makes them bold
+                }
+            },
+            {
+                "scope": ["variable"], // Targets control keywords (like 'if', 'for')
+                "settings": {
+                    "foreground": "#9a2f2f", // Changes them to red
+                    "fontStyle": "bold" // Makes them bold
+                }
+            },
+            {
+                "scope": ["variable.name"], // Targets control keywords (like 'if', 'for')
+                "settings": {
+                    "foreground": "#af0000", // Changes them to red
+                    "fontStyle": "bold" // Makes them bold
+                }
+            },
+            {
+                "scope": ["keyword.operator"], // Targets control keywords (like 'if', 'for')
+                "settings": {
+                    "foreground": "#d4d4d4", // Changes them to red
+                    "fontStyle": "bold" // Makes them bold
+                }
+            },            
+        ]
+    },
+    "editor.fontFamily": "IosevkaTermSlab Nerd Font Mono",
+    "editor.language.colorizedBracketPairs": [
+
+    ],
+    "files.associations": {
+        "*.kdl": "groovy"
+    }
+}

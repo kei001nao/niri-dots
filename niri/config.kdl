@@ -1,0 +1,14 @@
+// Config.kdl
+
+include "startup.kdl"
+include "input.kdl"
+include "output.kdl"
+include "layout.kdl"
+include "animations.kdl"
+include "rules.kdl"
+include "keybinds.kdl"
+include "env.kdl"
+include "named-workspaces.kdl"
+
+// Auto-generated colors from matugen: DO NOT EDIT
+include "colors.kdl"

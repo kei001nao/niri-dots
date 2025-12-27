@@ -1,0 +1,220 @@
+/// --- Layer rules --- ///
+
+layer-rule {
+  match namespace="^awww-daemon$"
+  place-within-backdrop true
+}
+
+//layer-rule {
+//    match namespace="^wallpaper$"
+//    match namespace="^swww-daemonoverview$"
+
+//    place-within-backdrop true
+//}
+
+layer-rule {
+  match namespace="waybar"
+  match at-startup=true
+
+  opacity 0.9
+
+//  shadow {
+//    on
+//    softness 10
+//    spread 10
+//    offset x=0 y=5
+//  }
+
+//  geometry-corner-radius 8
+}
+
+
+/// --- Window rules --- ///
+
+// Global window appearance
+window-rule {
+  open-floating false
+  geometry-corner-radius 8
+  clip-to-geometry true
+  draw-border-with-background false
+  tiled-state true
+}
+
+// Application-specific rules
+window-rule {
+  match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"Chromium-browser$"# title="^| Spotify$"
+
+  open-floating true
+  default-floating-position x=24 y=24 relative-to="bottom-right"
+}
+
+window-rule {
+  //match app-id=r#"firefox"#
+  match app-id=r#"discord$"#
+  //match app-id=r#"zen$"#
+  //match app-id=r#"google-chrome"#
+  match app-id=r#"code"#
+  match app-id=r#"obsidian$"#
+  match app-id=r#"vencord$"#
+  match app-id=r#"vesktop$"#
+  open-maximized true
+}
+
+window-rule {
+  //match app-id="firefox"
+  //match app-id="code"
+  match app-id="dev.zed.Zed"
+  match app-id="chromium"
+  //match app-id=r#"chromium$"#
+
+  default-column-width { proportion 0.75; }
+}
+
+window-rule {
+  match app-id=r#"QtScrcpy$"# title="^Phone-+"
+  default-column-width {proportion 0.25;}
+}
+
+window-rule {
+  match app-id=r#"QtScrcpy$"# title="^Tool$"
+  open-floating false
+  default-column-width {}
+}
+
+
+window-rule {
+  match app-id="^discord$"
+  match app-id="^vesktop$"
+
+  open-on-workspace "chat"
+}
+
+window-rule {
+  match app-id="^zen$"
+  //match app-id="^firefox$"
+
+  open-on-workspace "browser"
+}
+
+window-rule {
+  match app-id=r#"^org\.vinegarhq\.Sober$"#
+
+  open-fullscreen true
+}
+
+window-rule {
+  match app-id=r#"^sysupdate$"#
+
+  open-floating true
+  default-window-height { proportion 0.7; }
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id="^dropdown$"
+
+  open-floating true
+  default-floating-position x=0 y=16 relative-to="top"
+  default-window-height { proportion 0.5; }
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+  block-out-from "screen-capture"
+
+  // Use this instead if you want them visible on third-party screenshot tools.
+  // block-out-from "screencast"
+}
+
+//window-rule {
+//  match app-id="waybar"
+//  opacity 0.4
+//}
+
+// File dialogs - Open/Save/Select
+window-rule {
+  match title=r#".*(Open|Save|Select).*"#
+  open-floating true
+  default-column-width { proportion 0.0; }
+  max-width 800
+  max-height 1000
+}
+
+window-rule {
+  match title=r#".*File.*"#
+  open-floating true
+  default-column-width { proportion 0.0; }
+  max-width 800
+  max-height 1000
+}
+
+window-rule {
+  match app-id=r#"org\.gtk\.FileChooserDialog"#
+  open-floating true
+  default-column-width { proportion 0.0; }
+  max-width 800
+  max-height 1000
+}
+
+window-rule {
+  match title=r#".*Sign in - Google Accounts — Mozilla Firefox"#
+  open-floating true
+}
+
+// System dialogs
+window-rule {
+  match title=r#".*(Dialog|Properties|Preferences|Settings|Rename).*"#
+  open-floating true
+}
+
+// Authentication dialogs
+window-rule {
+  match app-id=r#"^org\.kde\.kdeconnect\.daemon$"#
+  match app-id=r#"^galculator$"#
+  open-floating true
+}
+
+window-rule {
+  match title="MainPicker"
+  match title=r#".*Authentication.*"#
+  match app-id=r#"org\.keepassxc\.KeePassXC"# title=r#".*Auto-Type.*"#
+  match app-id=r#"steam"# title=r#".*(Friends|Settings|Properties).*"#
+  match app-id=r#"Bitwarden"# title=r#".*unlock.*"#
+  match app-id=r#"^[Xx]dg-desktop-portal-gtk$"#
+  match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop.*$#"
+  match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
+  match app-id=r#"^\.*dialog\.*$"#
+  match app-id=r#"nm-connection-editor"#
+  match app-id=r#"nm-applet"#
+  match app-id=r#"pavucontrol"#
+  match app-id=r#"blueman-manager"#
+  match app-id=r#"waypaper"#
+
+  open-floating true
+  default-window-height {}
+  default-column-width {}
+}
+
+window-rule {
+  match app-id=r#"zenity"#
+  open-floating true
+}
+
+// Inactive window transparency
+window-rule {
+  match is-active=false
+  opacity 0.7
+}
+
+window-rule {
+  match is-floating=true
+
+  shadow {
+    on
+  }
+}

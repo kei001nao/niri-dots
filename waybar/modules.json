@@ -1,0 +1,364 @@
+{
+  "group/top1": {
+    "orientation": "inherit",
+    "modules": [
+      "power-profiles-daemon",
+      "idle_inhibitor",
+      "custom/updates",
+      "custom/updates#icn"
+      ]
+  },
+  "group/extras": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "extras",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/menu",
+      "tray"
+    ]
+  },
+  "group/brightness": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "brightness",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "audio",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "custom/cachy": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "kitty",
+    "on-click-right": "alacritty"
+  },
+  "niri/workspaces": {
+    "on-click": "activate",
+    //"format": " {icon}{index} ",
+    "format": "{icon}",
+    "format-icons": {
+      //"focused": "◉",
+      //"empty": "☓",
+      //"default": "◎",
+      "default": "󰄰",
+      "active": "󰄯"
+    }
+  },
+  "cpu": {
+    "format": "{icon}",
+    "format-icons": ["_", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "interval": 5,
+    "tooltip": true,
+    "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
+    "on-click": "kitty -e btop"
+  },
+  "cpu#percentage": {
+    "interval": 5,
+    "format": "{usage}%",
+    "on-click": "kitty -e btop"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H\n%M}",
+    "format-alt": "{:%d\n%m\n%y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+  },
+  "clock#date": {
+    "format": "{:%m\n%d}",
+    //"format-alt": "{:%Y\n%m\n%d}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    //"on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+  "clock#day": {
+    "format": "{:%a}",
+    //"format-alt": "{:%a}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+"mpris": {
+  "format": "<span size='14pt'>󰐎</span>",
+  "interval": 1,
+  "on-click": "playerctl play-pause",
+  "on-click-right": "playerctl next",
+  "on-click-middle": "playerctl previous",
+  "tooltip": true,
+  "tooltip-format": "{title}"
+},
+"custom/menu": {
+  "format": "<span size='16pt'>󰅃</span>",
+  "tooltip": false
+},
+"tray": {
+  "spacing": 16,
+  "reverse-direction": true,
+  "icon-size": 16,
+  "show-passive-items": false
+},
+"privacy": {
+  "icon-size": 14,
+  "transition-duration": 250,
+  "modules": [
+    {
+      "type": "screenshare",
+      "tooltip": false,
+    }
+  ],
+  "ignore": [
+    {
+      "type": "screenshare",
+      "name": "obs"
+    }
+  ]
+},
+"network": {
+  "format-icons": {
+    "wifi": [
+      "<span size='12pt'>󰤯</span>",
+      "<span size='12pt'>󰤟</span>",
+      "<span size='12pt'>󰤢</span>",
+      "<span size='12pt'>󰤥</span>",
+      "<span size='12pt'>󰤨</span>"
+    ],
+    "ethernet": "<span size='12pt'>󰈀</span>",
+    "disabled": "<span size='12pt'>󰤭</span>",
+    "disconnected": "<span size='12pt'>󰖪</span>"   //󰤩
+  },
+  "format-wifi": "{icon}",
+  "format-ethernet": "{icon}",
+  "format-disconnected": "{icon}",
+  "format-disabled": "{icon}",
+  "format-linked": "{ifname} (No IP)",
+  "interval": 5,
+  //"tooltip-format": "{essid}\t{gwaddr}",
+  "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+  "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+  "tooltip-format-disconnected": "Disconnected",
+  "on-click": "kitty --class=Impala -e impala",
+  //"on-click-right": "rfkill toggle wifi",
+  "tooltip": true,
+  "max-length": 20
+},
+"bluetooth": {
+  "interval": 5,
+  "format-on": "<span size='14pt'>󰂯</span>",
+  "format-off": "<span size='14pt'>󰂲</span>",
+  "format-disabled": "<span size='14pt'>󰂲</span>",
+  "format-connected": "<span size='14pt'>󰂱</span>",
+  "format-no-controller": "span size='14pt'>󰂯</span>",
+  "tooltip": true,
+  "tooltip-format": "{device_enumerate}",
+  "tooltip-format-enumerate-connected": "{device_address}",
+  "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
+  "on-click": "kitty --class=Bluetui -e bluetui",
+  "on-click-right": "rfkill toggle bluetooth"
+},
+"pulseaudio#microphone": {
+  "format": "{format_source}",
+  "format-source": "<span size='14pt'>󰍬</span>",
+  "format-source-muted": "<span size='14pt'>󰍭</span>",
+  "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  "on-click-right": "pavucontrol -t 4",
+  "tooltip": false
+},
+"pulseaudio/slider": {
+  "min": 0,
+  "max": 100,
+  "orientation": "vertical"
+},
+"pulseaudio": {
+  "interval": 1,
+  "format": "{icon}",
+  "format-icons": [
+    "<span size='14pt'>󰕿</span>",
+    "<span size='14pt'>󰖀</span>",
+    "<span size='14pt'>󰕾</span>"
+  ],
+  "format-muted": "<span size='14pt'>󰝟</span>",
+  "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  "on-click": "pavucontrol -t 3",
+  "reverse-scrolling": true,
+  "tooltip": true,
+  "tooltip-format": "Volume: {volume}%\n{desc}",
+  "ignored-sinks": [
+    "Easy Effects Sink"
+  ]
+},
+"pulseaudio#volume": {
+  "format": "{volume}"
+},
+
+"backlight/slider": {
+  "min": 0,
+  "max": 100,
+  "orientation": "vertical",
+  "device": "intel_backlight"
+},
+"backlight": {
+  "device": "intel_backlight",
+  "format": "{icon}",
+  "format-icons": [
+    "󰃚",
+    "󰃛",
+    "󰃜",
+    "󰃝",
+    "󰃞",
+    "󰃟",
+    "󰃠"
+  ],
+  "reverse-scrolling": true,
+  "smooth-scrolling-threshold": 0.2,
+  "tooltip": false
+},
+"backlight#percentage": {
+    "device": "intel_backlight",
+    "format": "{percent}",
+},
+
+"battery": {
+    "format": "{icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "󰂅",
+    ///"tooltip-format": "{time}",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "battery#percentage": {
+	"format": "{capacity}",
+    //"tooltip-format": "{time}"
+  },
+"custom/powermenu": {
+  "format": "<span size='13pt'>󰐥</span>",
+  "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
+  "tooltip": false
+},
+
+"idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        },
+        "tooltip-format-activated": "Idle Inhibitor Activated",
+        "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+},
+  "custom/updates": {
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "kitty -e arch-update",
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output --color-semver-updates"
+  },
+  "custom/updates#icn": {
+    "format": "{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󰏖",
+      "updated": ""          //"󰂪"
+    },
+    "on-click": "kitty -e arch-update",
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output --color-semver-updates"
+  },
+
+  // System tray
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}, Driver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  },
+  },
+
+}

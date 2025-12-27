@@ -1,0 +1,21 @@
+font-family = "IosevkaTermSlab Nerd Font Mono"
+font-size = 10
+window-padding-x = 16
+window-padding-y = 16
+
+custom-shader = customghostty.frag
+custom-shader-animation = true
+
+background-image = MiraBlack_AdjTspnt.png
+background-image-position = bottom-right
+background-image-opacity = .1
+background-image-fit = none
+
+background-opacity = 0.92
+
+
+right-click-action = context-menu
+
+theme = Yeehaw
+
+desktop-notifications = true

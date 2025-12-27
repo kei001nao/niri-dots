@@ -1,0 +1,116 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+format = """$battery$directory$git_branch$git_status$git_state$git_state$line_break$character"""
+right_format = """$python $cmd_duration"""
+add_newline = true
+
+c.disabled = true
+cmake.disabled = true
+haskell.disabled = true
+ruby.disabled = true
+rust.disabled = true
+perl.disabled = true
+package.disabled = true
+lua.disabled = true
+nodejs.disabled = true
+java.disabled = true
+golang.disabled = true
+
+palette = "moondust_dark"
+
+[palettes.moondust_dark]
+gray_0 = "#D2D4D5"
+gray_1 = "#B1B6B9"
+gray_2 = "#89949A"
+gray_3 = "#637179"
+gray_4 = "#455259"
+gray_5 = "#343F46"
+gray_6 = "#2C343A" 
+gray_7 = "#262C31"
+gray_8 = "#22272B"
+gray_9 = "#1E2225"
+
+slate_0 = "#B2D0EB"
+slate_1 = "#8FAFCC"
+slate_2 = "#6885A1"
+
+blue_0 = "#4D8FDB"
+blue_1 = "#3A82CF"
+blue_2 = "#2C75C3"
+blue_3 = "#2769B4"
+blue_4 = "#235D9F"
+blue_5 = "#1C4C82"
+
+text       = "#B1B6B9"
+subtext1   = "#89949A"
+subtext0   = "#637179"
+overlay2   = "#455259"
+overlay1   = "#343F46"
+overlay0   = "#2C343A"
+surface2   = "#262C31"
+surface1   = "#22272B"
+surface0   = "#1E2225"
+base       = "#161A1D"
+mantle     = "#161A1D"
+crust      = "#161A1D"
+
+dim        = "#637179"
+accent     = "#2C75C3"
+accent_dim = "#2769B4"
+success    = "#8FAFCC"
+warning    = "#B2D0EB"
+error      = "#6885A1"
+
+[line_break]
+disabled = false
+
+[directory]
+style = "dim"
+read_only_style = "dim"
+fish_style_pwd_dir_length = 1
+
+[character]
+success_symbol = "[ 󰞔](gray_4)"
+error_symbol   = "[ ](error)"
+vicmd_symbol   = "[ ](accent)"
+
+[git_branch]
+format = "[[\\( $symbol$branch](accent_dim) | ](text)"
+symbol = " "
+
+[git_status]
+format = "$all_status$ahead_behind\\)"
+conflicted = "="
+ahead = "[⇡${count} ](success)"
+behind = "⇣${count} "
+diverged = "[⇕⇡${ahead_count} ⇣${behind_count} ](accent_dim)"
+up_to_date = "[󰄸 ](success)"
+untracked = "[?${count} ](error)"
+stashed = "[ 󰏖 ](success)"
+modified = "[!${count} ](warning)"
+staged = "[+${count} ](success)"
+renamed = "[»${count} ](accent)"
+deleted = "[ ${count} ](error)"
+
+[git_commit]
+format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
+style = "success"
+
+[git_state]
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+style = "warning"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[cmd_duration]
+min_time = 10
+format = '󰥔 [$duration](accent)'
+show_milliseconds = true
+
+[python]
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'

@@ -1,0 +1,294 @@
+{
+  "name": "Moondust Dark",
+  "author": "https://github.com/vanyauhalin/moondusttheme/",
+  "variables": {
+    "transparent": "#FFFFFF00",
+    
+    // Dark theme colors
+    "dark_gray_0": "#D2D4D5",
+    "dark_gray_1": "#B1B6B9",
+    "dark_gray_2": "#89949A",
+    "dark_gray_3": "#637179",
+    "dark_gray_4": "#455259",
+    "dark_gray_5": "#343F46",
+    "dark_gray_6": "#2C343A",
+    "dark_gray_7": "#262C31",
+    "dark_gray_8": "#22272B",
+    "dark_gray_9": "#1E2225",
+    
+    "dark_slate_0": "#B2D0EB",
+    "dark_slate_1": "#8FAFCC",
+    "dark_slate_2": "#6885A1",
+    
+    "dark_blue_0": "#4D8FDB",
+    "dark_blue_1": "#3A82CF",
+    "dark_blue_2": "#2C75C3",
+    "dark_blue_3": "#2769B4",
+    "dark_blue_4": "#235D9F",
+    
+    "dark_background": "#161A1D",
+    
+    "dark_comment": "#637179",
+    "dark_plain_0": "#89949A",
+    "dark_plain_1": "#B1B6B9",
+    "dark_string_0": "#6885A1",
+    "dark_string_1": "#8FAFCC"
+  },
+  "globals": {
+    // Base colors
+    "background": "var(dark_background)",
+    "foreground": "var(dark_gray_1)",
+    "caret": "var(dark_gray_3)",
+    "line_highlight": "color(var(dark_gray_7) alpha(0.44))",
+    "selection": "var(dark_blue_2)",
+    "selection_border": "var(transparent)",
+    "inactive_selection": "var(dark_blue_2)",
+    "find_highlight": "var(dark_blue_2)",
+    "find_highlight_foreground": "var(dark_gray_0)",
+    
+    // Gutter
+    "gutter": "var(dark_background)",
+    "gutter_foreground": "var(dark_gray_4)",
+    "gutter_foreground_highlight": "var(dark_gray_1)",
+    
+    // Guides
+    "guide": "var(dark_gray_5)",
+    "active_guide": "var(dark_gray_5)",
+    "stack_guide": "var(dark_gray_5)",
+    
+    // Brackets
+    "brackets_options": "underline",
+    "brackets_foreground": "var(dark_plain_0)",
+    "bracket_contents_options": "underline",
+    "bracket_contents_foreground": "var(dark_plain_0)",
+    
+    // Tags
+    "tags_options": "stippled_underline",
+    "tags_foreground": "var(dark_plain_0)",
+    
+    // Shadow
+    "shadow": "var(transparent)",
+    "shadow_width": "0"
+  },
+  "rules": [
+    // Comments
+    {
+      "name": "Comment",
+      "scope": "comment, punctuation.definition.comment",
+      "foreground": "var(dark_comment)"
+    },
+    
+    // Keywords & Control
+    {
+      "name": "Keyword, Storage",
+      "scope": "keyword, storage.type, storage.modifier",
+      "foreground": "var(dark_plain_0)"
+    },
+    {
+      "name": "Control",
+      "scope": "keyword.control, keyword.operator",
+      "foreground": "var(dark_plain_0)"
+    },
+    
+    // Operators & Punctuation
+    {
+      "name": "Operator",
+      "scope": "keyword.operator.arithmetic, keyword.operator.assignment, keyword.operator.comparison, keyword.operator.logical, keyword.operator.bitwise",
+      "foreground": "var(dark_plain_0)"
+    },
+    {
+      "name": "Punctuation",
+      "scope": "punctuation.separator, punctuation.terminator, punctuation.accessor, punctuation.section, meta.brace, meta.delimiter",
+      "foreground": "var(dark_plain_0)"
+    },
+    
+    // Strings
+    {
+      "name": "String",
+      "scope": "string",
+      "foreground": "var(dark_string_1)"
+    },
+    {
+      "name": "String Punctuation",
+      "scope": "punctuation.definition.string, string punctuation.section.embedded",
+      "foreground": "var(dark_string_0)"
+    },
+    {
+      "name": "Template String",
+      "scope": "string.template, string.interpolated",
+      "foreground": "var(dark_string_1)"
+    },
+    
+    // Numbers & Constants
+    {
+      "name": "Number",
+      "scope": "constant.numeric",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "Constant",
+      "scope": "constant.language, constant.character",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // Variables & Parameters
+    {
+      "name": "Variable",
+      "scope": "variable, variable.other, variable.parameter",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "Variable Language",
+      "scope": "variable.language, variable.parameter.function",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // Functions & Methods
+    {
+      "name": "Function",
+      "scope": "entity.name.function, support.function",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "Function Call",
+      "scope": "variable.function, meta.function-call",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // Classes & Types
+    {
+      "name": "Class",
+      "scope": "entity.name.class, entity.name.type, support.class, support.type",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "Type",
+      "scope": "storage.type.primitive, storage.type.built-in, keyword.type",
+      "foreground": "var(dark_plain_0)"
+    },
+    
+    // Tags (HTML/XML)
+    {
+      "name": "Tag Name",
+      "scope": "entity.name.tag",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "Tag Punctuation",
+      "scope": "punctuation.definition.tag",
+      "foreground": "var(dark_plain_0)"
+    },
+    {
+      "name": "Tag Attribute",
+      "scope": "entity.other.attribute-name",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // CSS
+    {
+      "name": "CSS Property",
+      "scope": "support.type.property-name.css, meta.property-name.css",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "CSS Value",
+      "scope": "meta.property-value.css, support.constant.property-value.css",
+      "foreground": "var(dark_string_1)"
+    },
+    {
+      "name": "CSS Selector",
+      "scope": "entity.name.tag.css, entity.other.attribute-name.class.css, entity.other.attribute-name.id.css",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // Markdown
+    {
+      "name": "Markdown Heading",
+      "scope": "markup.heading, entity.name.section.markdown",
+      "foreground": "var(dark_plain_0)",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markdown Bold",
+      "scope": "markup.bold",
+      "foreground": "var(dark_plain_1)",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markdown Italic",
+      "scope": "markup.italic",
+      "foreground": "var(dark_plain_1)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Markdown Link",
+      "scope": "markup.underline.link, string.other.link",
+      "foreground": "var(dark_blue_0)"
+    },
+    {
+      "name": "Markdown Code",
+      "scope": "markup.raw, markup.inline.raw",
+      "foreground": "var(dark_string_1)"
+    },
+    
+    // Diff
+    {
+      "name": "Diff Inserted",
+      "scope": "markup.inserted, meta.diff.header.to-file",
+      "foreground": "var(dark_string_1)"
+    },
+    {
+      "name": "Diff Deleted",
+      "scope": "markup.deleted, meta.diff.header.from-file",
+      "foreground": "var(dark_slate_2)"
+    },
+    {
+      "name": "Diff Changed",
+      "scope": "markup.changed",
+      "foreground": "var(dark_slate_1)"
+    },
+    
+    // Errors & Warnings
+    {
+      "name": "Error",
+      "scope": "invalid, invalid.illegal",
+      "foreground": "var(dark_slate_2)"
+    },
+    {
+      "name": "Warning",
+      "scope": "invalid.deprecated",
+      "foreground": "var(dark_slate_1)"
+    },
+    
+    // JSON
+    {
+      "name": "JSON Key",
+      "scope": "meta.structure.dictionary.json string.quoted.double.json, meta.structure.dictionary.json support.type.property-name.json",
+      "foreground": "var(dark_plain_1)"
+    },
+    {
+      "name": "JSON String",
+      "scope": "meta.structure.dictionary.value.json string.quoted.double.json",
+      "foreground": "var(dark_string_1)"
+    },
+    
+    // YAML
+    {
+      "name": "YAML Key",
+      "scope": "entity.name.tag.yaml",
+      "foreground": "var(dark_plain_1)"
+    },
+    
+    // Regular Expressions
+    {
+      "name": "RegExp",
+      "scope": "string.regexp",
+      "foreground": "var(dark_string_1)"
+    },
+    {
+      "name": "RegExp Operator",
+      "scope": "string.regexp keyword.other",
+      "foreground": "var(dark_plain_0)"
+    }
+  ]
+}

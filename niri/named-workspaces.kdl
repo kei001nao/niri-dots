@@ -1,0 +1,6 @@
+// Named-Workspace Section
+
+workspace "chat"
+workspace "browser"
+
+

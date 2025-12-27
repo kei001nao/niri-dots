@@ -1,0 +1,43 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/guns_med.txt",
+    "type": "auto"
+  },
+  "display": {
+    "separator": " ★࿐  ",     // Separator between keys and values
+    "color": {
+        "keys": "yellow",    // Key color
+        "title": "red"     // Title color
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "break",
+    "theme",
+    "font",
+    "terminal",
+    "shell",
+    "de",
+    "wm",
+    "break",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "separator",
+    "break",
+    "colors",
+    "break",
+    {
+        "type": "command",
+        "text": "cat ~/weather.txt",
+        "key": "Out"
+    }
+  ]
+}

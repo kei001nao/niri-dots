@@ -1,0 +1,23 @@
+max-visible=10
+layer=top
+font=IosevkaTermSlab Nerd Font,IosevkaTermSlab NF,IosevkaTermSlab NF Medium 12 @wght=800
+background-color=#240c0290
+text-color=#e3bdb3
+text-alignment=center
+border-color=#880c0c
+border-size=3
+border-radius=0
+default-timeout=10000
+anchor=top-right
+margin=10
+progress-color=#c2721dff #880c0c
+
+icons=1
+max-icon-size=38
+
+on-notify=exec mpv ~/Music/SFX/morganpurkis_single-gunshot-3.wav
+
+group-by=app-name
+[grouped]
+format=<b>%s</b>\n%b
+default-timeout=2000

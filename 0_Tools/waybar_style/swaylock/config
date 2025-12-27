@@ -1,0 +1,49 @@
+# Swaylock-effects settings
+screenshots
+clock
+indicator
+effect-blur=7x5
+effect-vignette=0.5:0.5
+grace=2
+indicator-radius=100
+indicator-thickness=7
+fade-in=0.2
+
+## Moondust theme for Swaylock-effects
+
+# Inside of the indicator (typing/verifying)
+inside-color=22272B
+inside-clear-color=22272B
+inside-caps-lock-color=22272B
+inside-ver-color=2C75C3
+inside-wrong-color=6885A1
+
+# Ring around the indicator
+ring-color=343F46
+ring-clear-color=8FAFCC
+ring-caps-lock-color=B2D0EB
+ring-ver-color=4D8FDB
+ring-wrong-color=6885A1
+
+# Line separating inside and ring
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Text colors
+text-color=B1B6B9
+text-clear-color=D2D4D5
+text-caps-lock-color=D2D4D5
+text-ver-color=D2D4D5
+text-wrong-color=D2D4D5
+
+# Key press indicator
+key-hl-color=2C75C3
+
+# Backspace indicator
+bs-hl-color=6885A1
+
+# Separator line (set to transparent)
+separator-color=00000000

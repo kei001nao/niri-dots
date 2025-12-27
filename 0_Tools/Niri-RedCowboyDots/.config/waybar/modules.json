@@ -1,0 +1,202 @@
+{
+  // Workspaces
+  "niri/workspaces": {
+    "on-click": "activate",
+        "format": " {icon}{index} ",
+    "format-icons": {
+        "focused": "𖦏",
+        "active": "𓃗",
+        "urgent": "𓄀",
+        "empty": "󰺛",
+        "default": "𐚁"
+    }
+  },
+
+  // Taskbar
+  "wlr/taskbar": {
+    "format": "{icon} ",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty", "kitty", "ghostty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+
+  // niri Window
+  "niri/window": {
+    "format": "╞══ {} ══╡✧》",
+    "max-length": 55,
+    "expand": false,
+    "rewrite": {
+      "(.*) - Zen Browser": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1"
+    },
+    "separate-outputs": true
+  },
+
+  // Empty
+  "custom/empty": {
+    "format": "󰳳",
+    "expand": false
+  },
+
+  // custom niri Window
+  "custom/activewindow": {
+    "format": "╞══{}══╡✧》",
+    "max-length": 45,
+    "expand": false,
+    "exec": "~/.config/waybar/scripts/custom-activewindow.sh",
+    "interval": 1
+  },
+
+    // Tools
+  "custom/tools": {
+    "format": "",
+    "tooltip-format": "Tools"
+  },
+
+  // Updates Count
+  "custom/updates": {
+      "format": "{} {icon}",
+      "return-type": "json",
+      "format-icons": {
+          "has-updates": "󱍷",
+          "updated": "󰂪"
+      },
+      "exec-if": "which waybar-module-pacman-updates",
+      "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+
+  // wofi Application Launcher / Power Menu
+  "custom/appmenu": {
+    "format": "   ",
+    "on-click": "wofi -W 20%",
+    "on-click-right": "~/.config/waybar/scripts/power-menu.sh",
+    "tooltip-format": "Left: Open the application launcher\nRight: Open the power menu"
+  },
+
+  // wofi Application Launcher
+  "custom/appmenuicon": {
+    "format": "",
+    "on-click": "wofi",
+    "tooltip-format": "Left: Open the application launcher\nRight: Open the power menu"
+  },
+
+  // Extras Menu
+  "custom/exit": {
+    "format": " ⭐ ",
+    "on-click": "wf-osk",
+    "on-click-right": "niri msg action show-hotkey-overlay",
+    "tooltip-format": "Left: Open the on-screen keyboard\nRight: Show all keybindings"
+  },
+
+  // Keyboard State
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+
+  // System tray
+  "tray": {
+    "format": "{icon}",
+    "icon-size": 21,
+    "spacing": 10,
+    "max-length": 15,
+    "expand": false
+  },
+
+  // Clock
+  "clock": {
+    "format": "  《✧╞══ {:%A, %h %d - %I:%M %p} ══╡",
+    "on-click": "ags -t calendar",
+    "tooltip": false
+  },
+
+  "niri/language": {
+    "format": "/ K {short}"
+  },
+
+  // Battery
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["󰁻!", "󰁽", "󰁿", "󰂁", "󰁹"]
+  },
+
+  // Pulseaudio
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "🪕{volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "{format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+    },
+    "on-click": "pavucontrol"
+  },
+
+  // Bluetooth
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
+  },
+
+  // Other
+  "user": {
+    "format": "{user}",
+    "interval": 60,
+    "icon": false
+  },
+
+  // backlight:
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
+  }
+}

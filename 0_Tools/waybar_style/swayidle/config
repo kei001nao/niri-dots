@@ -1,0 +1,8 @@
+lock "hyprlock"
+unlock "pkill -9 hyprlock"
+idlehint 580
+timeout 600 "hyprlock"
+timeout 960 "niri msg action power-off-monitors" resume "niri msg action power-on-monitors"
+timeout 1200 "systemctl suspend"
+before-sleep "hyprlock"
+after-resume "niri msg action power-on-monitors"

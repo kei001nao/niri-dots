@@ -1,0 +1,184 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+    "reload_style_on_change": true,
+
+    // Left modules: clock/date
+    "modules-left": [
+        "clock"
+    ],
+
+    // Center modules: current app/window
+    "modules-center": [
+        "niri/window"
+    ],
+
+    // Right modules: system info + utilities
+    "modules-right": [
+        "custom/updates",
+        "custom/vpn",
+        "network",
+        "backlight",
+        "wireplumber",
+        "battery",
+        "idle_inhibitor",        
+        "power-profiles-daemon",
+        "group/tray",
+        "custom/power"
+    ],
+
+    "niri/window": {
+        "format": "{}",
+        "max-length": 40,
+        "swap-icon-label": false,
+        "rewrite": {
+            "(.*) — Zen Browser": " $1"
+        }
+    },
+
+    "clock": {
+        "format": "{:%a %d %b %I:%M %p}",
+            "format-alt": "{:%H:%M}",
+            "interval": 1,
+            "rotate": 0,
+            "tooltip-format": "{:%A %m/%d}\n\n<tt><small>{calendar}</small></tt>",
+            "timezones": ["America/Toronto"],
+            "calendar": {
+                "on-scroll": 1,
+                "format": {
+                    "months": "<span color='#D2D4D5'><b>{}</b></span>",
+                    "days": "<span color='#B1B6B9'><b>{}</b></span>",
+                    "weeks": "<span color='#B2D0EB'><b>W{}</b></span>",
+                    "weekdays": "<span color='#4D8FDB'><b>{}</b></span>",
+                    "today": "<span color='#3A82CF'><b><u>{}</u></b></span>"
+                }
+        }
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        },
+        "tooltip-format-activated": "Idle Inhibitor Activated",
+        "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "󱐋",
+            "performance": "󱐋",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "custom/updates": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/count-updates.sh",
+        "restart-interval": 3600,
+        "on-click": "kitty --title Updater -e ~/.config/waybar/scripts/install-updates.sh"
+    },
+
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "if nmcli connection show --active | grep -q 'wireguard\\|x1'; then echo '󰖂 VPN'; else echo ''; fi",
+        "interval": 5,
+        "tooltip-format": "VPN Status",
+        "on-click": "nmcli connection up x1 || nmcli connection down x1"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰄰", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "tooltip-format": "Backlight (Scroll): {percent}%",
+        "on-scroll-down": "brightnessctl -c backlight set 5%-",
+        "on-scroll-up": "brightnessctl -c backlight set +5%"
+    },
+
+    "wireplumber": {
+        "scroll-step": 2,
+        "format": "{icon} {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["","", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "max-volume": 150
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}, {capacity}%",
+    },
+
+    "group/tray": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "tray-hidden",
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/tray",
+            "tray"
+        ]
+    },
+
+    "custom/tray": {
+        "format": "",
+        "tooltip": "true",
+        "tooltip-format": "Expand tray",
+        "swap-icon-label": true
+    },
+
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    },
+
+    "custom/power": {
+        "format":"󰐥 ",
+        "on-click": "exec ~/.config/waybar/scripts/power_menu.sh",
+        "tooltip": false,
+        "swap-icon-label": true
+    },
+}
+    

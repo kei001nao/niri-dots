@@ -1,0 +1,7 @@
+awww-git
+mpvc-git
+niri-switch
+vicinae-bin
+wallust
+waybar-module-pacman-updates-git
+youtube-dl

@@ -1,0 +1,11 @@
+[X-GNOME-Metatheme]
+Name=Adwaita-RedCowboy
+
+Type=X-GNOME-Metatheme
+Comment=Ride em cowboy
+
+Encoding=UTF-8
+GtkTheme=Adwaita-dark
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24
