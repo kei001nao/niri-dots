@@ -1,0 +1,33 @@
+// color
+layout {
+  border {
+    active-color "{{colors.tertiary.default.hex}}"
+  }
+
+  insert-hint {
+    color "{{colors.error.default.hex}}"
+  }
+
+  tab-indicator {
+    active-color "{{colors.primary.default.hex}}"
+  }
+
+
+//  shadow {
+//    color "rgba(0, 0, 0, 0.7)"
+//  }
+
+//  background-color "#e4b7f3"
+}
+
+//overview {
+//  backdrop-color "#fff7fb"
+//}
+
+//window-rule {
+//  match is-floating=true
+
+//  border {
+//    active-color "#D3C6AA"
+//  }
+//}

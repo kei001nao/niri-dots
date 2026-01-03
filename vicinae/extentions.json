@@ -1,0 +1,10 @@
+{
+   "providers": {
+      "@sovereign/awww-switcher": {
+         "preferences": {
+            "gridRows": "5",
+            "wallpaperPath": "/home/kei/Pictures/Wallpapers/"
+         }
+      }
+   }
+}

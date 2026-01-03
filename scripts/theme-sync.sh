@@ -614,9 +614,11 @@ update_niri_config() {
   fi
 
   local background_color
+  local foreground_color
   local color_1
   local color_2
   background_color=$(jq -r '.special.background' "$wallust_colors_file")
+  foreground_color=$(jq -r '.special.foreground' "$wallust_colors_file")
   color_1="$(jq -r '.colors.color1' "$wallust_colors_file")E6"
   color_2=$(jq -r '.colors.color2' "$wallust_colors_file")
 
@@ -628,7 +630,7 @@ update_niri_config() {
   log_info "Updating niri config with background color: $background_color"
 
   # Only change active-color within the focus-ring block
-  sed -i "/border {/,/}/ s/active-color \".*\"/active-color \"$color_2\"/" "$niri_config_file"
+  sed -i "/border {/,/}/ s/active-color \".*\"/active-color \"$foreground_color\"/" "$niri_config_file"
   # Only change active-color within the Tab block
   sed -i "/tab-indicator {/,/}/ s/active-color \".*\"/active-color \"$color_1\"/" "$niri_config_file"
   # Only change color within the insert-hint block

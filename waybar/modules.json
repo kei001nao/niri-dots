@@ -55,12 +55,31 @@
     //"format": " {icon}{index} ",
     "format": "{icon}",
     "format-icons": {
+      "1": "壱",
+      "2": "弐",
+      "3": "参",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+//    "format-icons": {
       //"focused": "◉",
       //"empty": "☓",
       //"default": "◎",
-      "default": "󰄰",
-      "active": "󰄯"
-    }
+//      "default": "󰄰",
+//      "active": "󰄯"
+//    }
   },
   "cpu": {
     "format": "{icon}",

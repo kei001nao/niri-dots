@@ -19,6 +19,20 @@ $character
 
 add_newline = false
 
+palette = 'colors'
+
+[palettes.colors]
+mustard = '#af8700' # example
+color1 = '#8fcef3'
+color2 = '#003549'
+color3 = '#c0c7cd'
+color4 = '#1c2023'
+color5 = '#003549'
+color6 = '#0f1417'
+color7 = '#0f1417'
+color8 = '#8fcef3'
+color9 = '#cac1ea'
+
 # Directory configuration
 [directory]
 format = "[ $path ]($style)[$read_only]($read_only_style)"
@@ -29,7 +43,7 @@ home_symbol = "~"
 
 # Character at prompt
 [character]
-success_symbol = "[](bold green)"
+success_symbol = "[](color9 bold)"
 error_symbol = "[](bold red)"
 vimcmd_symbol ="[](bold green)"
 
@@ -44,7 +58,7 @@ show_always = true
 ssh_only = true
 ssh_symbol = ""
 format = "[$hostname ]($style)"
-style = "bg:#A94744 fg:#0D1017"
+style = "bg:color4 fg:color1"
 disabled = false
 
 # Time display

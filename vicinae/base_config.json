@@ -1,0 +1,51 @@
+{
+   "close_on_focus_loss": true,
+   "search_files_in_root": false,
+   "escape_key_behavior": "navigate_back",     //"close_window"
+   "close_on_focus_loss": false,
+   "consider_preedit": false,
+   "pop_to_root_on_close": true,
+   "favicon_service": "google",                // 'twenty' | 'google' | 'none'
+   "keybinding": "default",
+   "font": {
+      "normal": {
+        "family": "auto",
+        "size": 11
+      }
+   },
+   "theme": {
+      "light": {
+         "name": "wallust"
+      },
+      "dark": {
+         "name": "wallust"
+      }
+   },
+   "launcher_window": {
+      "opacity": 0.9,
+      //"blur": {
+      //  "enabled": true
+      //},
+      //"dim_around": true,
+      "compact_mode": {
+         "enabled": false
+      },
+      "size": {
+         "width": 700,
+         "height": 580
+      },
+      "client_side_decorations": {
+         "enabled": true,
+         "rounding": 20,
+         "border_width": 4
+      }
+   },
+   "favorites": [
+      "clipboard:history",
+      "files:search"
+   ],
+   "fallbacks": [
+      "files:search"
+   ]
+
+}

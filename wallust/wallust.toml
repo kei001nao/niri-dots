@@ -19,7 +19,7 @@ color_space = "lab"
 
 # Use the most prominent colors in a way that makes sense, a scheme color palette:
 # dark - dark16 - darkcomp - darkcomp16
- light - light16 - lightcomp - lightcomp16
+# light - light16 - lightcomp - lightcomp16
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16

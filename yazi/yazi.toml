@@ -5,7 +5,7 @@ play = [
     { run = 'celluloid "$@"', orphan = true, for = "unix" },
 ]
 edit = [
-    { run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
+    { run = 'fresh "$@"', desc = "fresh", block = true, for = "unix" },
 ]
 open = [
     { run = 'xdg-open "$1"', desc = "Open", for = "unix" },

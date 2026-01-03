@@ -11,6 +11,23 @@
 
 // keybind Section
 binds {
+    // Sunsetr
+    MOD+U               repeat=false    hotkey-overlay-title="Sunset Status" {  spawn-sh "~/.config/scripts/start-sunsetr.sh status"; }
+    MOD+SHIFT+U         repeat=false    hotkey-overlay-title="Toggle Sunset DAY" { spawn-sh "~/.config/scripts/start-sunsetr.sh day"; }
+    MOD+CTRL+U          repeat=false    hotkey-overlay-title="Toggle Sunset NIGHT" { spawn-sh "~/.config/scripts/start-sunsetr.sh night"; }
+    MOD+SHIFT+ALT+U      repeat=false    hotkey-overlay-title="Toggle Sunset GAMING" { spawn-sh "~/.config/scripts/start-sunsetr.sh gaming"; }
+    MOD+SHIFT+CTRL+U    repeat=false    hotkey-overlay-title="Toggle Sunset Default" { spawn-sh "~/.config/scripts/start-sunsetr.sh start"; }
+    MOD+ALT+U           repeat=false    hotkey-overlay-title="Toggle Sunset Auto" { spawn-sh "~/.config/scripts/start-sunsetr.sh auto"; }
+
+    // Wallpaper Selector
+    MOD+W              repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
+    MOD+SHIFT+W        repeat=false    hotkey-overlay-title="Open Wallpaper vicinae" { spawn-sh "vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"; }
+    // Application Restarts
+    MOD+ALT+W                           hotkey-overlay-title="Toggle View Waybar" { spawn "sh" "-c" "pgrep -x waybar >/dev/null && killall waybar || waybar &"; }
+    // use with toggle in waybar (doens't restart if not running)
+    // MOD+ALT+W                           { spawn "killall" "-SIGUSR1" "waybar"; }
+
+
     // Shortcuts Panel
     MOD+SHIFT+slash                    { show-hotkey-overlay; }
     // Open overview
@@ -18,25 +35,30 @@ binds {
 
     // Application Shortcuts
     // Terminal
-    MOD+RETURN         repeat=false    { spawn "kitty"; }
-    MOD+ALT+RETURN     repeat=false    { spawn "alacritty"; }
+    MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
+    MOD+SHIFT+RETURN   repeat=false    hotkey-overlay-title="Kitty(firejail)" { spawn-sh "firejail kitty"; }
+    // MOD+ALT+RETURN     repeat=false    { spawn "alacritty"; }
 
     // Launcher
-    MOD+SPACE          repeat=false    { spawn-sh "vicinae toggle"; }
+    MOD+SPACE          repeat=false    hotkey-overlay-title="Vicinae" { spawn-sh "vicinae toggle"; }
 
     // Browser
-    MOD+B              repeat=false    { spawn "firefox"; }
+    MOD+B              repeat=false    hotkey-overlay-title="Firefox" { spawn-sh "firefox"; }
+    MOD+SHIFT+B              repeat=false    hotkey-overlay-title="Firefox(firejail)" { spawn-sh "firejail firefox"; }
+
     //MOD+ALT+B                          { spawn-sh "google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation"; }
 
     // File Manager
-    MOD+E              repeat=false    { spawn "thunar"; }
-    MOD+ALT+E          repeat=false    { spawn-sh "kitty -e yazi"; }
-
-    // Wallpaper Selector
-    MOD+W              repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
+    MOD+E              repeat=false    hotkey-overlay-title="Thunar" { spawn "thunar"; }
+    MOD+ALT+E          repeat=false    hotkey-overlay-title="Yazi" { spawn-sh "kitty -e yazi"; }
 
     // Lock
     MOD+SHIFT+L        repeat=false    hotkey-overlay-title="Lock Screen: hyprlock" { spawn "hyprlock"; }
+
+    // Center Column & Clipboard
+    MOD+C              repeat=false    hotkey-overlay-title="Center Column" { center-column; }
+    MOD+SHIFT+C        repeat=false    hotkey-overlay-title="Center Visible Column"  { center-visible-columns; }
+    MOD+CTRL+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // Media Keys
     XF86AudioRaiseVolume               allow-when-locked=true { spawn-sh "mediactl volume_up"; }
@@ -136,9 +158,6 @@ binds {
     MOD+TAB                             { focus-workspace-previous; }
 
     // Layout Controls
-    MOD+C              repeat=false     { center-column; }
-    MOD+SHIFT+C        repeat=false     { center-visible-columns; }
-
     Mod+SHIFT+ALT+LEFT                  { set-column-width "-5%"; }
     Mod+SHIFT+ALT+RIGHT                 { set-column-width "+5%"; }
     Mod+SHIFT+ALT+UP                    { set-window-height "-5%"; }
@@ -173,8 +192,4 @@ binds {
     MOD+CTRL+S                          { screenshot-window write-to-disk=true; }
     MOD+P                               { spawn-sh "pgrep -x hyprpicker >/dev/null || hyprpicker"; }
 
-    // Application Restarts
-    MOD+ALT+W                           { spawn "sh" "-c" "pgrep -x waybar >/dev/null && killall waybar || waybar &"; }
-    // use with toggle in waybar (doens't restart if not running)
-    // MOD+ALT+W                           { spawn "killall" "-SIGUSR1" "waybar"; }
 }

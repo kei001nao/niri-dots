@@ -9,12 +9,23 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
+   "imports": [
+      "base_config.json",
+      "extentions.json"
+   ],
    "theme": {
       "light": {
-         "name": "wallust"
+         "name": "matugen"
       },
       "dark": {
-         "name": "wallust"
+         "name": "matugen"
+      }
+   },
+   "providers": {
+      "@sovereign/awww-switcher": {
+         "preferences": {
+            "colorGenTool": "matugen"
+         }
       }
    }
 }

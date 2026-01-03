@@ -1,37 +1,4 @@
 @import "./colors.css";
-/*
-# black
-color0  {{color0 }}
-color8  {{color8 }}
-
-# red
-color1  {{color1 }}
-color9  {{color9 }}
-
-# green
-color2  {{color2 }}
-color10 {{color10 }}
-
-# yellow
-color3  {{color3 }}
-color11 {{color11 }}
-
-# blue
-color4  {{color4 }}
-color12 {{color12 }}
-
-# magenta
-color5  {{color5 }}
-color13 {{color13 }}
-
-# cyan
-color6  {{color6 }}
-color14 {{color14 }}
-
-# white
-color7  {{color7 }}
-color15 {{color15 }}
-*/
 
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
@@ -42,7 +9,7 @@ color15 {{color15 }}
 
 window#waybar {
   /* background: alpha(@background,0.5); */
-  background: alpha(@theme_base_color,0.5);
+  background: alpha(@theme_base_color,0.9);
 }
 
 #custom-cachy:hover,
@@ -73,7 +40,7 @@ window#waybar {
 #backlight,
 #battery,
 #custom-powermenu {
-  color: @color7;  /*white*/
+  color: @on_surface;    /* @color7;  white*/
   padding: 6px 0;
 }
 
@@ -83,13 +50,13 @@ window#waybar {
   background-color: transparent;
 }
 #power-profiles-daemon.performance {
-  color: @color1;  /*red*/
+  color: @tertiary;   /* @color1;  red*/
 }
 #power-profiles-daemon.balanced {
-  color: @color2;  /*green*/
+  color: @primary;    /* @color2;  green*/
 }
 #power-profiles-daemon.power-saver {
-  color: @color3;  /*yellow*/
+  color: @secondary;   /* @color3;  yellow*/
 }
 
 #idle_inhibitor {
@@ -98,104 +65,159 @@ window#waybar {
   background-color: transparent;
 }
 #idle_inhibitor.activated {
-  color: @color1;  /*red*/
+  color: @error;              /*@color1;  red*/
 }
 #idle_inhibitor.deactivated {
-  color: @color3;  /*yellow*/
+  color: @primary;             /* @color3;  yellow*/
 }
 
 #custom-updates {
   padding: 8px 0px 0px 0px;
   margin: 0px 0px 0px -2px;
-  color: @color1;  /*red*/
+  color: @error;               /*@color1;  red*/
   background-color: transparent;
 }
 #custom-updates.icn {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px -3px;
-  color: @color1;  /*red*/
+  color: @error;               /* @color1;  red*/
   background-color: transparent;
 }
 
-#workspaces button {
-  color: @foreground;
-  padding: 0;
-}
-#workspaces button.active,
-#workspaces button.default {
-  color: @color2;  /*green*/
-}
-#workspaces button.empty {
-color: @color1;  /*red*/
+#workspaces {
+  border: 1px solid alpha(@on_surface, 0.8);
+  border-radius: 2px;
+  background-color: alpha(@theme_base_color,0.8);
+  opacity: 0.95;
 }
 
-#privacy {
-  margin: 4px;
-  color: @color3;
+#workspaces button {
+  padding: 0px 0px;
+  margin: 1px 0px;
+  border-radius: 2px;
+  color: alpha(@on_surface, 0.8);
+  background-color: alpha(@on_surface, 0.3);
+  border: 1px solid alpha(@on_surface, 0.8);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
 }
+#workspaces button.empty {
+  border-radius: 2px;
+  color: @error;
+  background-color: alpha(@theme_base_color,0.9);
+  border: 1px groove alpha(@on_surface, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.6;
+}
+#workspaces button.active{
+  border-radius: 2px;
+  color: alpha(@theme_base_color, 0.9);
+  background-color: alpha(@on_surface, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
+}
+#workspaces button.default {
+  color: @primary;  /*green*/
+}
+#workspaces button:hover {
+  border-radius: 2px;
+  color: @on_surface;
+  background: linear-gradient(180deg, @theme_base_color 75%, @on_surface);
+  opacity: 0.9;
+}
+
 
 #cpu.percentage {
   padding: 0px 0;
 }
 
 #clock {
-  color: @color4;  /*blue*/
+  color: @tertiary;
 }
 #clock.date {
-  color: @color5;  /*magenta*/
+  color: @primary;
 }
 #clock.day {
-  color: @color6;  /*cyan*/
+  color: @secondary;
 }
 
 
 #mpris {
-  color: @color3;  /*yellow*/
+  color: @on_primary_container;
 }
 
 #network.disabled {
-  color: @color1;  /*red*/
+  color: @error;  /*red*/
 }
 #network.wifi {
-  color: @color2;  /*green*/
+  color: @tertiary;  /*green*/
 }
 #network.ethernet {
-  color: @color3;  /*yellow*/
+  color: @primary;  /*yellow*/
 }
 
 #bluetooth.disabled {
-  color: @color1;  /*red*/
+  color: @error;  /*red*/
 }
 #bluetooth.connected {
-  color: @color4;  /*blue*/
+  color: @secondary;  /*blue*/
 }
 
+#pulseaudio {
+  color: @primary;
+}
 #pulseaudio.sink-muted:not(.microphone) {
-  color: @color3;  /*yellow*/
+  color: @tertiary;  /*yellow*/
 }
 #pulseaudio.microphone.source-muted {
-  color: @color1;  /*red*/
+  color: @error;  /*red*/
 }
 #pulseaudio.volume {
   padding: 0px 0px 10px 0px;
+
+}
+
+#backlight.{
+  color: @secondary;
 }
 #backlight.percentage {
   padding: 0px 0px 6px 0px;
 }
 
+#pulseaudio-slider,
+#backlight-slider {
+min-height: 80px;
+}
+#pulseaudio-slider slider,
+#backlight-slider slider {
+background: transparent;
+}
+#pulseaudio-slider trough,
+#backlight-slider trough {
+min-width: 8px;
+}
+#pulseaudio-slider highlight {
+background: @primary;
+}
+#backlight-slider highlight {
+background: @secondary;
+}
+
+#battery {
+  /* color: @tertiary; */
+}
 #battery.plugged {
-  color: @color4;  /*blue*/
+  color: @tertiary;  /*blue*/
 }
 #battery.charging {
-  color: @color2;  /*green*/
+  color: @secondary;  /*green*/
 }
 #battery.critical {
-  color: @color1;  /*red*/
+  color: @error;  /*red*/
 }
 #battery.percentage {
   padding: 0px 0px 10px 0px;
 }
-
 
 
 tooltip {
@@ -206,26 +228,4 @@ tooltip * {
   color: @foreground;
   margin: 2px;
   background: @background;
-}
-
-#pulseaudio-slider,
-#backlight-slider {
-  min-height: 80px;
-}
-
-#pulseaudio-slider slider,
-#backlight-slider slider {
-  background: transparent;
-}
-
-#pulseaudio-slider trough,
-#backlight-slider trough {
-  min-width: 8px;
-}
-
-#pulseaudio-slider highlight {
-  background: @color4;  /*blue*/
-}
-#backlight-slider highlight {
-  background: @color3;  /*yellow*/
 }
