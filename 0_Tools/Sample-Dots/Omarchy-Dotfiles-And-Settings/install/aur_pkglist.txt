@@ -1,0 +1,8 @@
+gnome-control-center
+gvfs-google
+pyprland
+spotube-bin
+sunsetr
+tema-git
+waybar-module-pacman-updates-git
+wttrbar

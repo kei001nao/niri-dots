@@ -1,0 +1,4 @@
+[ DONE ] - qt6-virtualkeyboard was installed successfully!\n
+[ DONE ] - sddm was installed successfully!\n
+Removed '/etc/systemd/system/display-manager.service'.
+Created symlink '/etc/systemd/system/display-manager.service' → '/usr/lib/systemd/system/sddm.service'.

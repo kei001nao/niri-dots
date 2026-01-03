@@ -1,0 +1,6 @@
+pacman -Qqen>pkglist.txt
+pacman -Qqm>aurlist.txt
+
+
+sudo pacman -S --neede - < pkglist.txt
+yay -S --needed - < aurlist.txt

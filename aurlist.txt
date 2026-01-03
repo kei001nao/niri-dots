@@ -1,7 +1,13 @@
 awww-git
-mpvc-git
+crudini
+fresh-editor-bin
 niri-switch
+pyprland
+python-iniparse
+qt6ct-kde
+sunsetr
 vicinae-bin
+visual-studio-code-bin
 wallust
 waybar-module-pacman-updates-git
-youtube-dl
+wlroots-asan-git

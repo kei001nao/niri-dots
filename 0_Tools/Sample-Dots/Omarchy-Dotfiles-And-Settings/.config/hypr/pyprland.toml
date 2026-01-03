@@ -1,0 +1,31 @@
+[pyprland]
+plugins = [
+ #"expose",
+ #"fetch_client_menu",
+ #"lost_windows",
+ "magnify",
+ "scratchpads",
+ "toggle_special",
+ #"workspaces_follow_focus",
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "uwsm-app -- ghostty --class=com.ghostty-mini"
+#class = "com.ghostty-yazi"
+size = "60% 60%"
+#max_size = "1920px 100%"
+#margin = 50
+#unfocus = "hide"
+lazy = true
+
+
+[scratchpads.yazi]
+animation = "fromTop"
+command = "uwsm-app -- ghostty --class=com.ghostty-yazi -e yazi"
+#class = "com.ghostty-yazi"
+size = "75% 80%"
+#max_size = "1920px 100%"
+#margin = 50
+#unfocus = "hide"
+lazy = true

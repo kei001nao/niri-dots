@@ -1,0 +1,3 @@
+install_zsh='N'
+setup_bash='N'
+install_fish='Y'

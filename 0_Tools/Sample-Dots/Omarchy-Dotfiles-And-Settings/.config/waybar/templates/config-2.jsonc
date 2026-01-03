@@ -1,0 +1,298 @@
+{
+  "layer": "top",
+  "position": "left",
+  //"mod": "dock",
+  //"height": 900,
+  //"width": 10,
+  //"margin-top": 1,
+  //"margin-bottom": 1,
+  //"margin-left": 1,
+  //"margin-right": 1,
+
+  "group/center1": {
+    "orientation": "inherit",
+    "modules": [
+      "idle_inhibitor",
+      "custom/updatespacman",
+      "custom/update"
+      ]
+  },
+  "group/center2": {
+    "orientation": "inherit",
+    "modules": ["hyprland/workspaces"]
+  },
+  "group/center3": {
+    "orientation": "inherit",
+    "modules": ["custom/weather",
+                "clock",
+                "clock#time",
+                "clock#dateicon",
+                "clock#date",
+                "clock#day"]
+  },
+  "group/center4": {
+    "orientation": "inherit",
+    "modules": ["backlight","backlight#percentage",
+                "pulseaudio",
+                "bluetooth", "network",
+                "cpu","cpu#percentage",
+                "battery","battery#percentage"]
+  },
+  "modules-center": ["group/center1",
+                     "group/center2",
+                     "group/center3",
+                     "group/center4"],
+// ---------Modules configuration---------
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "custom/updatespacman": {
+    "format": "{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󰏖",
+      "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 60
+  },
+  // ------------------
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "壱",
+      "2": "弐",
+      "3": "参",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  // ------------------
+  "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "wttrbar --nerd --location Sakai-shi",
+        "return-type": "json"
+  },
+  "clock": {
+    "format": "⌚",
+    "format-alt": "⌚",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+  "clock#dateicon": {
+    "format": "",
+    "format-alt": "",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+
+  "clock#date": {
+    "format": "{:%m\n%d}",
+    "format-alt": "{:%Y/%m/%d}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+  "clock#time": {
+    "format": "{:%H\n%M}",
+    "format-alt": "{:%H:%M:%S}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+  "clock#day": {
+    "format": "{:%a}",
+    //"format-alt": "{:%a}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "mouth": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
+  },
+  // ------------------
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [
+      "🌑",
+      "🌘",
+      "🌗",
+      "🌖",
+      "🌕"
+    ]
+  },
+  "backlight#percentage": {
+    "device": "intel_backlight",
+    "format": "{percent}%",
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth"
+  },
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "format-linked": "{ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "nospacing": 1,
+    "on-click": "alacritty --class=Impala -e impala"
+  },
+  "cpu": {
+    "format": "󰍛",
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+  "cpu#percentage": {
+    "interval": 5,
+    "format": "{usage}%",
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "{power}",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "battery#percentage": {
+	"format": "{capacity}%",
+    "tooltip-format": "{time}"
+  },
+
+}
