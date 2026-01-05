@@ -1,7 +1,8 @@
 // Startup Applications
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
-spawn-sh-at-startup "swayidle -w timeout 180 'hyprlock' timeout 300 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' before-sleep 'hyprlock'"
-spawn-at-startup "awww-daemon &"
-spawn-at-startup "waybar"
+//spawn-sh-at-startup "swayidle -w timeout 180 'hyprlock' timeout 300 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' before-sleep 'hyprlock'"
+//spawn-sh-at-startup "hypridle"
+spawn-at-startup "awww-daemon"
+//spawn-at-startup "waybar"
 spawn-at-startup "sh" "-c" "vicinae server &"
 spawn-sh-at-startup "~/.config/scripts/start-sunsetr.sh start"

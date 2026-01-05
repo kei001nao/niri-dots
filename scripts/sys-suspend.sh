@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-/usr/bin/gtklock -d
+/usr/bin/hyprlock
 systemctl suspend
 
 exit 0

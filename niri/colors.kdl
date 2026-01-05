@@ -1,7 +1,7 @@
 // color
 layout {
   border {
-    active-color "#cac1ea"
+    active-color "#abcae5"
   }
 
   insert-hint {
@@ -9,7 +9,7 @@ layout {
   }
 
   tab-indicator {
-    active-color "#8fcef3"
+    active-color "#83d5c4"
   }
 
 

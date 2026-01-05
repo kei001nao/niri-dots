@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# figlet "Updates" -f slant -w 44 -c  # optional, remove if not installed
 echo "=== Updates ==="
 echo ""
 
-# Run Fedora updates
-sudo dnf upgrade --refresh -y
+kitty --app-id kitty-floating -e arch-update
 
-notify-send "Updates complete"
-echo "[INFO] OK"
-sleep 2
+exit 0

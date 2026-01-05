@@ -11,11 +11,25 @@
 
 // keybind Section
 binds {
+
+    // Custom scratchpad support
+    //Mod+Ctrl+S hotkey-overlay-title="Spotify Scratchpad Toggle" { spawn-sh "niri-scratchpad spotify"; }
+    //Mod+Ctrl+F hotkey-overlay-title="Nemo Scratchpad Toggle" { spawn-sh "niri-scratchpad nemo"; }
+
+    //Mod+Slash           repeat=false    hotkey-overlay-title="focus workspace scratch" { focus-workspace "scratch"; }
+
+    // Menu
+    MOD+ALT+SPACE      repeat=false    hotkey-overlay-title="Main Menu" { spawn-sh "$HOME/.config/scripts/vicinae-main-menu.sh"; }
+
+
+    // Power Menu
+    MOD+X              repeat=false    hotkey-overlay-title="Power Menu" { spawn-sh "$HOME/.config/scripts/vicinae-power-menu.sh"; }
+
     // Sunsetr
     MOD+U               repeat=false    hotkey-overlay-title="Sunset Status" {  spawn-sh "~/.config/scripts/start-sunsetr.sh status"; }
     MOD+SHIFT+U         repeat=false    hotkey-overlay-title="Toggle Sunset DAY" { spawn-sh "~/.config/scripts/start-sunsetr.sh day"; }
     MOD+CTRL+U          repeat=false    hotkey-overlay-title="Toggle Sunset NIGHT" { spawn-sh "~/.config/scripts/start-sunsetr.sh night"; }
-    MOD+SHIFT+ALT+U      repeat=false    hotkey-overlay-title="Toggle Sunset GAMING" { spawn-sh "~/.config/scripts/start-sunsetr.sh gaming"; }
+    MOD+SHIFT+ALT+U     repeat=false    hotkey-overlay-title="Toggle Sunset GAMING" { spawn-sh "~/.config/scripts/start-sunsetr.sh gaming"; }
     MOD+SHIFT+CTRL+U    repeat=false    hotkey-overlay-title="Toggle Sunset Default" { spawn-sh "~/.config/scripts/start-sunsetr.sh start"; }
     MOD+ALT+U           repeat=false    hotkey-overlay-title="Toggle Sunset Auto" { spawn-sh "~/.config/scripts/start-sunsetr.sh auto"; }
 
@@ -27,7 +41,6 @@ binds {
     // use with toggle in waybar (doens't restart if not running)
     // MOD+ALT+W                           { spawn "killall" "-SIGUSR1" "waybar"; }
 
-
     // Shortcuts Panel
     MOD+SHIFT+slash                    { show-hotkey-overlay; }
     // Open overview
@@ -36,7 +49,7 @@ binds {
     // Application Shortcuts
     // Terminal
     MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
-    MOD+SHIFT+RETURN   repeat=false    hotkey-overlay-title="Kitty(firejail)" { spawn-sh "firejail kitty"; }
+    //MOD+SHIFT+RETURN   repeat=false    hotkey-overlay-title="Kitty(firejail)" { spawn-sh "firejail kitty"; }
     // MOD+ALT+RETURN     repeat=false    { spawn "alacritty"; }
 
     // Launcher
@@ -44,12 +57,13 @@ binds {
 
     // Browser
     MOD+B              repeat=false    hotkey-overlay-title="Firefox" { spawn-sh "firefox"; }
-    MOD+SHIFT+B              repeat=false    hotkey-overlay-title="Firefox(firejail)" { spawn-sh "firejail firefox"; }
+    //MOD+SHIFT+B              repeat=false    hotkey-overlay-title="Firefox(firejail)" { spawn-sh "firejail firefox"; }
 
     //MOD+ALT+B                          { spawn-sh "google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation"; }
 
     // File Manager
     MOD+E              repeat=false    hotkey-overlay-title="Thunar" { spawn "thunar"; }
+    MOD+SHIFT+E        repeat=false    hotkey-overlay-title="SUperfile" { spawn-sh "kitty -e spf"; }
     MOD+ALT+E          repeat=false    hotkey-overlay-title="Yazi" { spawn-sh "kitty -e yazi"; }
 
     // Lock
@@ -61,19 +75,21 @@ binds {
     MOD+CTRL+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // Media Keys
-    XF86AudioRaiseVolume               allow-when-locked=true { spawn-sh "mediactl volume_up"; }
-    XF86AudioLowerVolume               allow-when-locked=true { spawn-sh "mediactl volume_down"; }
-    XF86MonBrightnessUp                allow-when-locked=true { spawn-sh "mediactl brightness_up"; }
-    XF86MonBrightnessDown              allow-when-locked=true { spawn-sh "mediactl brightness_down"; }
-    XF86AudioMute                      allow-when-locked=true { spawn-sh "mediactl volume_mute"; }
-    XF86AudioMicMute                   allow-when-locked=true { spawn-sh "mediactl mic_mute"; }
-    XF86AudioNext                      allow-when-locked=true { spawn-sh "mediactl next_track"; }
-    XF86AudioPause                     allow-when-locked=true { spawn-sh "mediactl play_pause"; }
-    XF86AudioPlay                      allow-when-locked=true { spawn-sh "mediactl play_pausse"; }
-    XF86AudioPrev                      allow-when-locked=true { spawn-sh "mediactl prev_track"; }
+    XF86AudioRaiseVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute          allow-when-locked=true   { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute       allow-when-locked=true   { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    xF86AudioPlay          allow-when-locked=true   { spawn-sh "playerctl --player=spotify 'play-pause'"; }
+    xF86AudioStop          allow-when-locked=true   { spawn-sh "playerctl --player=spotify 'stop'"; }
+    xF86AudioPrev          allow-when-locked=true   { spawn-sh "playerctl --player=spotify 'previous'"; }
+    xF86AudioNext          allow-when-locked=true   { spawn-sh "playerctl --player=spotify 'next'"; }
+
+    // brightness key
+    XF86MonBrightnessUp    allow-when-locked=true   { spawn-sh "brightnessctl --class=backlight set +1%"; }
+    XF86MonBrightnessDown  allow-when-locked=true   { spawn-sh "brightnessctl --class=backlight set 1%-"; }
 
     // Window Management
-    MOD+Q              repeat=false    { close-window; }
+    MOD+Q              repeat=false     { close-window; }
 
     // Move focus windows
     MOD+LEFT                            { focus-column-left; }
@@ -89,7 +105,7 @@ binds {
     Mod+Period                          hotkey-overlay-title="expel window from column" { expel-window-from-column; }
 
     // Tab
-    MOD+G              repeat=false     { toggle-column-tabbed-display; }
+    MOD+G              repeat=false     hotkey-overlay-title="toggle column tabbed" { toggle-column-tabbed-display; }
 
     // Move windows within workspace
     MOD+SHIFT+LEFT                      { move-column-left; }
@@ -155,7 +171,7 @@ binds {
     MOD+SHIFT+8                         { move-column-to-workspace 8; }
     MOD+SHIFT+9                         { move-column-to-workspace 9; }
 
-    MOD+TAB                             { focus-workspace-previous; }
+    MOD+TAB                             hotkey-overlay-title="focus workspace previous" { focus-workspace-previous; }
 
     // Layout Controls
     Mod+SHIFT+ALT+LEFT                  { set-column-width "-5%"; }
@@ -187,9 +203,12 @@ binds {
     Mod+SHIFT+ALT+F    repeat=false     { expand-column-to-available-width; }
 
     // Utils
-    MOD+S                               { screenshot; }
-    MOD+SHIFT+S                         { screenshot-screen write-to-disk=true; }
-    MOD+CTRL+S                          { screenshot-window write-to-disk=true; }
-    MOD+P                               { spawn-sh "pgrep -x hyprpicker >/dev/null || hyprpicker"; }
+    Print              repeat=false     hotkey-overlay-title="screenshot" { screenshot; }
+    SHIFT+Print                         { screenshot-screen write-to-disk=true; }
+    CTRL+Print                          { screenshot-window write-to-disk=true; }
+    //MOD+S                               { screenshot; }
+    //MOD+SHIFT+S                         { screenshot-screen write-to-disk=true; }
+    //MOD+CTRL+S                          { screenshot-window write-to-disk=true; }
+    MOD+P                               hotkey-overlay-title="hyprpicker" { spawn-sh "pgrep -x hyprpicker >/dev/null || hyprpicker"; }
 
 }

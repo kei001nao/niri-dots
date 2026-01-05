@@ -23,15 +23,15 @@ palette = 'colors'
 
 [palettes.colors]
 mustard = '#af8700' # example
-color1 = '#8fcef3'
-color2 = '#003549'
-color3 = '#c0c7cd'
-color4 = '#1c2023'
-color5 = '#003549'
-color6 = '#0f1417'
-color7 = '#0f1417'
-color8 = '#8fcef3'
-color9 = '#cac1ea'
+color1 = '#83d5c4'
+color2 = '#003730'
+color3 = '#bec9c5'
+color4 = '#1b211f'
+color5 = '#003730'
+color6 = '#0e1513'
+color7 = '#0e1513'
+color8 = '#83d5c4'
+color9 = '#abcae5'
 
 # Directory configuration
 [directory]

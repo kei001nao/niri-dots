@@ -180,6 +180,18 @@ window-rule {
 }
 
 window-rule {
+  //match app-id=r#"kitty"#
+  match app-id="^kitty-floating$"
+  open-floating true
+  open-focused true
+
+  default-window-height {}
+  default-column-width {}
+  max-width 800
+  max-height 800
+}
+
+window-rule {
   match title="MainPicker"
   match title=r#".*Authentication.*"#
   match app-id=r#"org\.keepassxc\.KeePassXC"# title=r#".*Auto-Type.*"#
@@ -194,8 +206,16 @@ window-rule {
   match app-id=r#"pavucontrol"#
   match app-id=r#"blueman-manager"#
   match app-id=r#"waypaper"#
+  match app-id=r#"impala"#
+  match app-id=r#"bluetui"#
 
   open-floating true
+  open-focused true
+  //default-floating-position x=0 y=0 relative-to="top"
+  // Half of the screen high.
+  //default-window-height { proportion 0.5; }
+  // 80% of the screen wide.
+  //default-column-width { proportion 0.8; }
   default-window-height {}
   default-column-width {}
 }

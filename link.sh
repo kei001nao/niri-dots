@@ -41,6 +41,7 @@ SUDO_PID=""
 readonly CONFIG_FOLDERS=(
   niri waybar fish zsh fastfetch mako alacritty kitty starship
   nvim yazi vicinae zathura wallust rofi scripts hypr sunsetr
+  matugen gtk-3.0 gtk-4.0 fresh
 )
 
 # Optional dependencies that waybar modules depend on

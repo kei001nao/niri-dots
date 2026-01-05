@@ -1,6 +1,9 @@
 // Named-Workspace Section
 
-workspace "chat"
-workspace "browser"
+//workspace "chat"
+workspace "notion"
+//workspace "music"
+
+//workspace "scratch"
 
 

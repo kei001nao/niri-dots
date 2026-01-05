@@ -24,7 +24,8 @@
    "providers": {
       "@sovereign/awww-switcher": {
          "preferences": {
-            "colorGenTool": "matugen"
+            "colorGenTool": "none",
+            "postCommand": "/home/kei/.config/scripts/theme-only-sync.sh ${wallpaper}"
          }
       }
    }

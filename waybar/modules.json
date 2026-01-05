@@ -203,7 +203,7 @@
   "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
   "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
   "tooltip-format-disconnected": "Disconnected",
-  "on-click": "kitty --class=Impala -e impala",
+  "on-click": "kitty --class=impala -e impala",
   //"on-click-right": "rfkill toggle wifi",
   "tooltip": true,
   "max-length": 20
@@ -219,7 +219,7 @@
   "tooltip-format": "{device_enumerate}",
   "tooltip-format-enumerate-connected": "{device_address}",
   "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
-  "on-click": "kitty --class=Bluetui -e bluetui",
+  "on-click": "kitty --class=bluetui -e bluetui",
   "on-click-right": "rfkill toggle bluetooth"
 },
 "pulseaudio#microphone": {
@@ -347,7 +347,7 @@
   "custom/updates": {
     "format": "{}",
     "return-type": "json",
-    "on-click": "kitty -e arch-update",
+    "on-click": "kitty --app-id kitty-floating -e arch-update",
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output --color-semver-updates"
   },
@@ -358,7 +358,7 @@
       "has-updates": "󰏖",
       "updated": ""          //"󰂪"
     },
-    "on-click": "kitty -e arch-update",
+    "on-click": "kitty --app-id kitty-floating -e arch-update",
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output --color-semver-updates"
   },

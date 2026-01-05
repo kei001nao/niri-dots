@@ -13,8 +13,8 @@ on-touch=invoke-default-action
 
 # [ STYLE OPTIONS ]
 font= JetBrainsMono Nerd Font 10
-background-color=#322c4c
-text-color=#8fcef3
+background-color=#123348
+text-color=#83d5c4
 # background-color=#2D353B
 # text-color=#D3C6AA
 
@@ -25,7 +25,7 @@ margin=10
 outer-margin=0
 padding=16
 
-border-color=#364955
+border-color=#334b46
 # border-color=#3A94C5
 border-size=2
 border-radius=0

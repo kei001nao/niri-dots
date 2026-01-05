@@ -13,14 +13,14 @@
         "size": 11
       }
    },
-   "theme": {
-      "light": {
-         "name": "wallust"
-      },
-      "dark": {
-         "name": "wallust"
-      }
-   },
+   //"theme": {
+   //   "light": {
+   //      "name": "wallust"
+   //   },
+   //   "dark": {
+   //      "name": "wallust"
+   //   }
+   //},
    "launcher_window": {
       "opacity": 0.9,
       //"blur": {
