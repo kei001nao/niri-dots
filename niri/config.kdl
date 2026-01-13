@@ -8,6 +8,7 @@ include "animations.kdl"
 include "rules.kdl"
 include "keybinds.kdl"
 include "env.kdl"
+include "recent-window.kdl"
 include "named-workspaces.kdl"
 
 // Auto-generated colors from matugen: DO NOT EDIT

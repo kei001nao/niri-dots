@@ -24,6 +24,6 @@ case "$selected" in
         systemctl suspend
         ;;
     "　　　Logout")
-        loginctl terminate-user $USER
+        niri msg action quit
         ;;
 esac

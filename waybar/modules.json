@@ -47,8 +47,8 @@
   "custom/cachy": {
     "format": "",
     "tooltip": false,
-    "on-click": "kitty",
-    "on-click-right": "alacritty"
+    "on-click": "$HOME/.config/scripts/launch_vicinae.sh",
+    "on-click-right": "kitty"
   },
   "niri/workspaces": {
     "on-click": "activate",
@@ -145,6 +145,35 @@
     },
     "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
+"mpd": {
+    //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    //"format-disconnected": "Disconnected ",
+    //"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon}",
+    "format-disconnected": "",
+    "format-stopped": "{consumeIcon}",
+    "interval": 10,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "on-click": "rmpc remote keybind p",
+    "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) "
+    //"tooltip-format-disconnected": "MPD (disconnected)"
+},
 "mpris": {
   "format": "<span size='14pt'>󰐎</span>",
   "interval": 1,

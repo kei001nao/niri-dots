@@ -1,0 +1,30 @@
+
+{{colors.on_primary.default.rgb}}
+{{colors.primary.default.rgb}}
+
+
+rgb({{colors.on_primary.default.red}}, {{colors.on_primary.default.green | lighten: -10}}, {{colors.on_primary.default.blue | lighten: -10}})
+
+rgb({{colors.on_primary.default.red | lighten: -10}}, {{colors.on_primary.default.green}}, {{colors.on_primary.default.blue | lighten: -10}})
+
+rgb({{colors.on_primary.default.red | lighten: -10}}, {{colors.on_primary.default.green | lighten: -10}}, {{colors.on_primary.default.blue}})
+
+
+rgb({{colors.primary.default.red}}, {{colors.primary.default.green | lighten: -30}}, {{colors.primary.default.blue | lighten: -30}})
+
+rgb({{colors.primary.default.red | lighten: -30}}, {{colors.primary.default.green}}, {{colors.primary.default.blue | lighten: -30}})
+
+rgb({{colors.primary.default.red | lighten: -30}}, {{colors.primary.default.green | lighten: -30}}, {{colors.primary.default.blue}})
+
+
+
+/*
+<* for i in -10..10 *>
+   actual: {{ i }} multiplied: {{ {{ i }} * 10 }} {{ colors.primary.default.red | lighten:{{i}} * 10 | invert}}
+<* endfor *>
+
+
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>
+*/

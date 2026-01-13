@@ -1,7 +1,11 @@
 // Named-Workspace Section
 
+workspace "one"
+workspace "two"
+workspace "three"
 //workspace "chat"
-workspace "notion"
+//workspace "notion"
+workspace "VM"
 //workspace "music"
 
 //workspace "scratch"

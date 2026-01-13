@@ -1,7 +1,7 @@
 // color
 layout {
   border {
-    active-color "#abcae5"
+    active-color "#c9c2eacc"
   }
 
   insert-hint {
@@ -9,7 +9,7 @@ layout {
   }
 
   tab-indicator {
-    active-color "#83d5c4"
+    active-color "#8ecff2"
   }
 
 
@@ -18,6 +18,12 @@ layout {
 //  }
 
 //  background-color "#e4b7f3"
+}
+
+recent-windows {
+    highlight {
+        active-color "#c9c2eacc"
+    }
 }
 
 //overview {

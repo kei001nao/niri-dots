@@ -1,7 +1,7 @@
 # More details are at https://superfile.dev/configure/superfile-config/
 #
 # change your theme
-theme = 'catppuccin'
+theme = 'nord'
 # 
 # The editor files will be opened with. (Leave blank to use the EDITOR environment variable).
 editor = "fresh"
@@ -61,7 +61,7 @@ nerdfont = true
 show_select_icons = true
 #
 # Set transparent background or not (this only work when your terminal background is transparent)
-transparent_background = false
+transparent_background = true
 # 
 # File preview width allow '0' (this mean same as file panel),'x' x must be from 2 to 10 (This means that the width of the file preview will be one xth of the total width.)
 file_preview_width = 0
@@ -92,4 +92,4 @@ metadata = false
 enable_md5_checksum = false
 #
 # Zoxide support for the fast navigation
-zoxide_support = false
+zoxide_support = true

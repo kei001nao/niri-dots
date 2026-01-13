@@ -1,5 +1,6 @@
 {
-  "theme": "dark",
+  "version": 1,
+  "theme": "matugen",
   "file_browser": {
     "show_hidden": true
   }

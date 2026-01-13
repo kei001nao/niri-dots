@@ -20,13 +20,5 @@
       "dark": {
          "name": "matugen"
       }
-   },
-   "providers": {
-      "@sovereign/awww-switcher": {
-         "preferences": {
-            "colorGenTool": "none",
-            "postCommand": "/home/kei/.config/scripts/theme-only-sync.sh ${wallpaper}"
-         }
-      }
    }
 }

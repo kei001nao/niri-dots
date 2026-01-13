@@ -4,6 +4,15 @@ layer-rule {
   match namespace="^awww-daemon$"
   place-within-backdrop true
 }
+layer-rule {
+  match namespace="vicinae"
+  shadow {
+    on
+    //spread 8
+    //offset x=0 y=10
+    //color "#00000080"
+  }
+}
 
 //layer-rule {
 //    match namespace="^wallpaper$"
@@ -12,11 +21,11 @@ layer-rule {
 //    place-within-backdrop true
 //}
 
-layer-rule {
-  match namespace="waybar"
-  match at-startup=true
+//layer-rule {
+//  match namespace="waybar"
+//  match at-startup=true
 
-  opacity 0.9
+//  opacity 0.9
 
 //  shadow {
 //    on
@@ -26,7 +35,7 @@ layer-rule {
 //  }
 
 //  geometry-corner-radius 8
-}
+//}
 
 
 /// --- Window rules --- ///
@@ -34,6 +43,7 @@ layer-rule {
 // Global window appearance
 window-rule {
   open-floating false
+  open-maximized false
   geometry-corner-radius 8
   clip-to-geometry true
   draw-border-with-background false
@@ -42,6 +52,11 @@ window-rule {
 
 // Application-specific rules
 window-rule {
+  match app-id=r#"virt-manager$"#
+  open-on-workspace "VM"
+}
+
+window-rule {
   match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
   match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
   match app-id=r#"Chromium-browser$"# title="^| Spotify$"
@@ -49,11 +64,11 @@ window-rule {
   open-floating true
   default-floating-position x=24 y=24 relative-to="bottom-right"
 }
-
+ 
 window-rule {
   //match app-id=r#"firefox"#
   match app-id=r#"discord$"#
-  //match app-id=r#"zen$"#
+  match app-id=r#"zen$"#
   //match app-id=r#"google-chrome"#
   match app-id=r#"code"#
   match app-id=r#"obsidian$"#
@@ -63,13 +78,24 @@ window-rule {
 }
 
 window-rule {
-  //match app-id="firefox"
+  match app-id="firefox"
   //match app-id="code"
-  match app-id="dev.zed.Zed"
+  //match app-id="dev.zed.Zed"
   match app-id="chromium"
   //match app-id=r#"chromium$"#
 
   default-column-width { proportion 0.75; }
+}
+
+window-rule {
+  match app-id="rmpc"
+  default-column-width { proportion 0.65; }
+}
+
+window-rule {
+  match title="clrsync"
+  //open-maximized true
+  default-column-width { proportion 0.85; }
 }
 
 window-rule {
@@ -83,7 +109,6 @@ window-rule {
   default-column-width {}
 }
 
-
 window-rule {
   match app-id="^discord$"
   match app-id="^vesktop$"
@@ -91,12 +116,12 @@ window-rule {
   open-on-workspace "chat"
 }
 
-window-rule {
-  match app-id="^zen$"
+//window-rule {
+//  match app-id="^zen$"
   //match app-id="^firefox$"
 
-  open-on-workspace "browser"
-}
+//  open-on-workspace "browser"
+//}
 
 window-rule {
   match app-id=r#"^org\.vinegarhq\.Sober$"#
@@ -180,15 +205,8 @@ window-rule {
 }
 
 window-rule {
-  //match app-id=r#"kitty"#
-  match app-id="^kitty-floating$"
+  match app-id=r#"org.kde.kate"# title=r#".*Close Document.*"#
   open-floating true
-  open-focused true
-
-  default-window-height {}
-  default-column-width {}
-  max-width 800
-  max-height 800
 }
 
 window-rule {
@@ -223,6 +241,23 @@ window-rule {
 window-rule {
   match app-id=r#"zenity"#
   open-floating true
+}
+
+// CachyOS Update
+window-rule {
+  match app-id="^kitty-floating$"
+  open-floating true
+  open-focused true
+
+  default-window-height {}
+  default-column-width {}
+  max-width 800
+  max-height 800
+}
+
+window-rule {
+  match is-active=true
+  opacity 0.96
 }
 
 // Inactive window transparency

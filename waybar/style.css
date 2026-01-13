@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-  /* background: alpha(@background,0.5); */
-  background: alpha(@theme_base_color,0.9);
+  background:  alpha(@on_primary_fixed,0.9);
+  /* background: alpha(@theme_base_color,0.9); */
 }
 
 #custom-cachy:hover,
@@ -22,8 +22,8 @@ window#waybar {
 #custom-powermenu:hover {
   opacity: 0.6;
 }
-
-/*  #custom-cachy,  */
+ 
+#custom-cachy,
 #power-profiles-daemon,
 #idle_inhibitor,
 #custom-updates,
@@ -40,8 +40,12 @@ window#waybar {
 #backlight,
 #battery,
 #custom-powermenu {
-  color: @on_surface;    /* @color7;  white*/
+  color: @primary;    /* @color7;  white*/
   padding: 6px 0;
+}
+
+#custom-cachy {
+  color: @tertiary;
 }
 
 #power-profiles-daemon {
@@ -50,13 +54,13 @@ window#waybar {
   background-color: transparent;
 }
 #power-profiles-daemon.performance {
-  color: @tertiary;   /* @color1;  red*/
+  color: @secondary;   /* @color1;  red*/
 }
 #power-profiles-daemon.balanced {
   color: @primary;    /* @color2;  green*/
 }
 #power-profiles-daemon.power-saver {
-  color: @secondary;   /* @color3;  yellow*/
+  color: @tertiary;   /* @color3;  yellow*/
 }
 
 #idle_inhibitor {
@@ -87,7 +91,7 @@ window#waybar {
 #workspaces {
   border: 1px solid alpha(@on_surface, 0.8);
   border-radius: 2px;
-  background-color: alpha(@theme_base_color,0.8);
+  background-color: alpha(@on_primary,0.8);
   opacity: 0.95;
 }
 
@@ -104,14 +108,14 @@ window#waybar {
 #workspaces button.empty {
   border-radius: 2px;
   color: @error;
-  background-color: alpha(@theme_base_color,0.9);
+  background-color: alpha(@on_primary,0.9);
   border: 1px groove alpha(@on_surface, 0.9);
   transition: all 0.3s ease-in-out;
   opacity: 0.6;
 }
 #workspaces button.active{
   border-radius: 2px;
-  color: alpha(@theme_base_color, 0.9);
+  color: alpha(@on_primary, 0.9);
   background-color: alpha(@on_surface, 0.9);
   transition: all 0.3s ease-in-out;
   opacity: 1.0;
@@ -143,7 +147,7 @@ window#waybar {
 
 
 #mpris {
-  color: @on_primary_container;
+  color: @secondary;
 }
 
 #network.disabled {

@@ -1,5 +1,8 @@
 [config]
 
+[templates.test]
+  input_path = './templates/colors-test.css'
+  output_path = '~/.config/matugen/colors-test.css'
 
 [templates.gtk3]
   input_path = './templates/gtk-colors.css'
@@ -40,6 +43,19 @@ output_path = '~/.config/gtk-4.0/colors.css'
   input_path = './templates/colors.css'
   output_path = '~/.config/waybar/colors.css'
 
+[templates.superfile]
+  input_path = './templates/spf-matugen.toml'
+  output_path = '~/.config/superfile/theme/matugen.toml'
+
+[templates.fresh]
+  input_path = './templates/fresh.json'
+  output_path = '~/.config/fresh/themes/matugen.json'
+
+[templates.rmpc]
+  input_path = './templates/rmpc-def.ron'
+  output_path = '~/.config/rmpc/themes/def.ron'
+
+  
 #[templates.yazi]
 #  input_path = './templates/yazi-theme.toml'
 #  output_path = '~/.config/yazi/theme.toml'

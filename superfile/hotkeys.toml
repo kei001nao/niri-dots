@@ -1,18 +1,18 @@
 # =================================================================================================
 # Global hotkeys (cannot conflict with other hotkeys)
-confirm = ['enter', 'right', 'l']
-quit = ['q', 'esc']
+confirm = ['right']
+quit = ['ctrl+q']
 cd_quit = ['Q', '']
 # movement
-list_up = ['up', 'k']
-list_down = ['down', 'j']
-page_up = ['pgup','']
-page_down = ['pgdown','']
+list_up = ['up']
+list_down = ['down']
+page_up = ['pgup']
+page_down = ['pgdown']
 # file panel control
 create_new_file_panel = ['n', '']
 close_file_panel = ['w', '']
-next_file_panel = ['tab', 'L']
-previous_file_panel = ['shift+left', 'H']
+next_file_panel = ['tab']
+previous_file_panel = ['shift+left']
 toggle_file_preview_panel = ['f', '']
 open_sort_options_menu = ['o', '']
 toggle_reverse_sort = ['R', '']
@@ -26,15 +26,15 @@ file_panel_item_rename = ['ctrl+r', '']
 # file operations
 copy_items = ['ctrl+c', '']
 cut_items = ['ctrl+x', '']
-paste_items = ['ctrl+v', 'ctrl+w', '']
+paste_items = ['ctrl+v', '']
 delete_items = ['ctrl+d', 'delete', '']
 permanently_delete_items = ['D', '']
 # compress and extract
 extract_file = ['ctrl+e', '']
 compress_file = ['ctrl+a', '']
 # editor
-open_file_with_editor = ['e', '']
-open_current_directory_with_editor = ['E', '']
+open_file_with_editor = ['enter']
+open_current_directory_with_editor = ['shift+enter']
 # other
 pinned_directory = ['P', '']
 toggle_dot_file = ['.', '']
@@ -48,14 +48,14 @@ copy_present_working_directory = ['c', '']
 toggle_footer = ['F', '']
 # =================================================================================================
 # Typing hotkeys (can conflict with all hotkeys)
-confirm_typing = ['enter', '']
-cancel_typing = ['ctrl+c', 'esc']
+confirm_typing = ['enter']
+cancel_typing = ['esc']
 # =================================================================================================
 # Normal mode hotkeys (can conflict with other modes, cannot conflict with global hotkeys)
-parent_directory = ['h', 'left', 'backspace']
-search_bar = ['/', '']
+parent_directory = ['left', 'backspace']
+search_bar = ['/', 'ctrl+f']
 # =================================================================================================
 # Select mode hotkeys (can conflict with other modes, cannot conflict with global hotkeys)
-file_panel_select_mode_items_select_down = ['shift+down', 'J']
-file_panel_select_mode_items_select_up = ['shift+up', 'K']
-file_panel_select_all_items = ['A', '']
+file_panel_select_mode_items_select_down = ['shift+down']
+file_panel_select_mode_items_select_up = ['shift+up']
+file_panel_select_all_items = ['ctrl+a']

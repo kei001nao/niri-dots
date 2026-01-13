@@ -3,7 +3,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
 
-  gaps 4
+  gaps 2
 
   center-focused-column "never"       //"on-overflow"
   always-center-single-column
@@ -49,7 +49,7 @@ layout {
   tab-indicator {
     position "left"
     //hide-when-single-tab
-    width 10
+    width 12
     gap 1
     gaps-between-tabs 6
     corner-radius 8
@@ -65,11 +65,10 @@ layout {
 
   shadow {
     off
-    softness 10
-    spread -3
-    offset x=0 y=5
-
-    color "#0007"
+    softness 15
+    spread 8
+    draw-behind-window true
+    color "#00000070"
   }
 
   struts {

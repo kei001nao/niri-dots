@@ -1,7 +1,7 @@
 // color
 layout {
   border {
-    active-color "{{colors.tertiary.default.hex}}"
+    active-color "{{colors.tertiary.default.hex}}cc"
   }
 
   insert-hint {
@@ -18,6 +18,12 @@ layout {
 //  }
 
 //  background-color "#e4b7f3"
+}
+
+recent-windows {
+    highlight {
+        active-color "{{colors.tertiary.default.hex}}cc"
+    }
 }
 
 //overview {

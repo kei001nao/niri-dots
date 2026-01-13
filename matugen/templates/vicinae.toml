@@ -13,7 +13,7 @@ icon = "icons/matugen.png"
 [colors.core]
 accent = "{{colors.primary.default.hex}}"
 accent_foreground = "{{colors.background.default.hex}}"
-background = { name = "{{colors.on_tertiary.default.hex}}", opacity = 0.85 }
+background = { name = "{{colors.on_primary_fixed.default.hex}}", opacity = 0.85 }
 foreground = "{{colors.on_background.default.hex}}"
 secondary_background = "{{colors.surface_container_low.default.hex}}"
 border = "{{colors.outline_variant.default.hex}}"

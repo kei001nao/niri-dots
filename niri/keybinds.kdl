@@ -34,8 +34,8 @@ binds {
     MOD+ALT+U           repeat=false    hotkey-overlay-title="Toggle Sunset Auto" { spawn-sh "~/.config/scripts/start-sunsetr.sh auto"; }
 
     // Wallpaper Selector
-    MOD+W              repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
-    MOD+SHIFT+W        repeat=false    hotkey-overlay-title="Open Wallpaper vicinae" { spawn-sh "vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"; }
+    MOD+W               repeat=false    hotkey-overlay-title="Open Wallpaper vicinae" { spawn-sh "$HOME/.config/scripts/launch_vicinae.sh awww"; }
+    MOD+SHIFT+W         repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
     // Application Restarts
     MOD+ALT+W                           hotkey-overlay-title="Toggle View Waybar" { spawn "sh" "-c" "pgrep -x waybar >/dev/null && killall waybar || waybar &"; }
     // use with toggle in waybar (doens't restart if not running)
@@ -46,14 +46,20 @@ binds {
     // Open overview
     MOD+O              repeat=false    { toggle-overview; }
 
+    // Music App
+    MOD+M              repeat=false    hotkey-overlay-title="RMPC" { spawn-sh "kitty --app-id=rmpc -e rmpc"; }    
+
+    // Virtual Machine
+    MOD+V              repeat=false    hotkey-overlay-title="Virt-Manager" { spawn-sh "virt-manager"; }    
+    
     // Application Shortcuts
     // Terminal
-    MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
+   MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
     //MOD+SHIFT+RETURN   repeat=false    hotkey-overlay-title="Kitty(firejail)" { spawn-sh "firejail kitty"; }
     // MOD+ALT+RETURN     repeat=false    { spawn "alacritty"; }
 
     // Launcher
-    MOD+SPACE          repeat=false    hotkey-overlay-title="Vicinae" { spawn-sh "vicinae toggle"; }
+    MOD+SPACE          repeat=false    hotkey-overlay-title="Vicinae" { spawn-sh "$HOME/.config/scripts/launch_vicinae.sh"; }
 
     // Browser
     MOD+B              repeat=false    hotkey-overlay-title="Firefox" { spawn-sh "firefox"; }
@@ -62,9 +68,9 @@ binds {
     //MOD+ALT+B                          { spawn-sh "google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation"; }
 
     // File Manager
-    MOD+E              repeat=false    hotkey-overlay-title="Thunar" { spawn "thunar"; }
-    MOD+SHIFT+E        repeat=false    hotkey-overlay-title="SUperfile" { spawn-sh "kitty -e spf"; }
-    MOD+ALT+E          repeat=false    hotkey-overlay-title="Yazi" { spawn-sh "kitty -e yazi"; }
+    MOD+E              repeat=false    hotkey-overlay-title="Yazi" { spawn-sh "kitty -e yazi"; }
+    MOD+SHIFT+E        repeat=false    hotkey-overlay-title="Thunar" { spawn "thunar"; }
+    MOD+ALT+E          repeat=false    hotkey-overlay-title="SUperfile" { spawn-sh "kitty -e spf"; }
 
     // Lock
     MOD+SHIFT+L        repeat=false    hotkey-overlay-title="Lock Screen: hyprlock" { spawn "hyprlock"; }
@@ -75,8 +81,8 @@ binds {
     MOD+CTRL+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // Media Keys
-    XF86AudioRaiseVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    XF86AudioLowerVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioRaiseVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
+    XF86AudioLowerVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01-"; }
     XF86AudioMute          allow-when-locked=true   { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute       allow-when-locked=true   { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     xF86AudioPlay          allow-when-locked=true   { spawn-sh "playerctl --player=spotify 'play-pause'"; }
@@ -98,23 +104,25 @@ binds {
     MOD+RIGHT                           { focus-column-right; }
 
     // Consume or expel windows
-    Mod+ALT+LEFT                        hotkey-overlay-title="consume or expel window left" { consume-or-expel-window-left; }
-    Mod+ALT+RIGHT                       hotkey-overlay-title="consume or expel window right" { consume-or-expel-window-right; }
+    MOD+ALT+LEFT                        hotkey-overlay-title="consume or expel window left" { consume-or-expel-window-left; }
+    MOD+ALT+RIGHT                       hotkey-overlay-title="consume or expel window right" { consume-or-expel-window-right; }
 
-    Mod+Comma                           hotkey-overlay-title="consume window into column" { consume-window-into-column; }
-    Mod+Period                          hotkey-overlay-title="expel window from column" { expel-window-from-column; }
+    MOD+Comma                           hotkey-overlay-title="consume window into column" { consume-window-into-column; }
+    MOD+Period                          hotkey-overlay-title="expel window from column" { expel-window-from-column; }
 
     // Tab
     MOD+G              repeat=false     hotkey-overlay-title="toggle column tabbed" { toggle-column-tabbed-display; }
-
+    // Gemini
+    MOD+SHIFT+G              repeat=false     hotkey-overlay-title="Gemini-cli" { spawn-sh "kitty -e gemini"; }
+    
     // Move windows within workspace
     MOD+SHIFT+LEFT                      { move-column-left; }
     MOD+SHIFT+DOWN                      { move-window-down; }
     MOD+SHIFT+UP                        { move-window-up; }
     MOD+SHIFT+RIGHT                     { move-column-right; }
 
-    MOD+ALT+UP                          hotkey-overlay-title="move column to workspace down" { move-column-to-workspace-down; }
-    MOD+ALT+DOWN                        hotkey-overlay-title="move column to workspace up" { move-column-to-workspace-up; }
+    MOD+CTRL+UP                          hotkey-overlay-title="move column to workspace up" { move-column-to-workspace-up; }
+    MOD+CTRL+DOWN                        hotkey-overlay-title="move column to workspace down" { move-column-to-workspace-down; }
 
     // Focus/ Move to workspace edges
     MOD+HOME                            { focus-column-first; }
@@ -124,16 +132,16 @@ binds {
     MOD+SHIFT+END                       { move-column-to-last; }
 
     // Monitor Management - Move between monitors
-    MOD+CTRL+LEFT                       { focus-monitor-left; }
-    MOD+CTRL+RIGHT                      { focus-monitor-right; }
-    MOD+CTRL+UP                         { focus-monitor-up; }
-    MOD+CTRL+DOWN                       { focus-monitor-down; }
+    //MOD+CTRL+LEFT                       { focus-monitor-left; }
+    //MOD+CTRL+RIGHT                      { focus-monitor-right; }
+    //MOD+CTRL+UP                         { focus-monitor-up; }
+    //MOD+CTRL+DOWN                       { focus-monitor-down; }
 
     // Move windows to different monitors
-    MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
-    MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
-    MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
-    MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
+    //MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
+    //MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
+    //MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
+    //MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
 
     // Workspace Management
     MOD+WHEELSCROLLDOWN                 cooldown-ms=100 { focus-workspace-down; }
@@ -171,22 +179,26 @@ binds {
     MOD+SHIFT+8                         { move-column-to-workspace 8; }
     MOD+SHIFT+9                         { move-column-to-workspace 9; }
 
-    MOD+TAB                             hotkey-overlay-title="focus workspace previous" { focus-workspace-previous; }
+    // Move workspace with MOD+Shift+Ctrl
+    MOD+SHIFT+CTRL+UP                   { move-workspace-up; }
+    MOD+SHIFT+CTRL+DOWN                 { move-workspace-down; }
+     
+    ALT+TAB                             hotkey-overlay-title="focus workspace previous" { focus-workspace-previous; }
 
     // Layout Controls
-    Mod+SHIFT+ALT+LEFT                  { set-column-width "-5%"; }
-    Mod+SHIFT+ALT+RIGHT                 { set-column-width "+5%"; }
-    Mod+SHIFT+ALT+UP                    { set-window-height "-5%"; }
-    Mod+SHIFT+ALT+DOWN                  { set-window-height "+5%"; }
+    MOD+SHIFT+ALT+LEFT                  { set-column-width "-5%"; }
+    MOD+SHIFT+ALT+RIGHT                 { set-column-width "+5%"; }
+    MOD+SHIFT+ALT+UP                    { set-window-height "-5%"; }
+    MOD+SHIFT+ALT+DOWN                  { set-window-height "+5%"; }
 
     MOD+BRACKETLEFT                     { set-column-width "-10%"; }
     MOD+BRACKETRIGHT                    { set-column-width "+10%"; }
     MOD+SHIFT+BRACKETLEFT               { set-window-height "-10%"; }
     MOD+SHIFT+BRACKETRIGHT              { set-window-height "+10%"; }
 
-    Mod+R              repeat=false     { switch-preset-column-width; }
-    Mod+SHIFT+R        repeat=false     { switch-preset-window-height; }
-    Mod+CTRL+R                          { reset-window-height; }
+    MOD+R              repeat=false     { switch-preset-column-width; }
+    MOD+SHIFT+R        repeat=false     { switch-preset-window-height; }
+    MOD+CTRL+R                          { reset-window-height; }
 
     // Window resizing with mouse
     MOD+CTRL+WHEELSCROLLDOWN            { set-window-height "-5%"; }

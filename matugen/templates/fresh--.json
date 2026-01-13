@@ -1,0 +1,62 @@
+{
+  "name": "matugen",
+  "editor": {
+    "bg": [{{colors.on_primary.default.red}}, {{colors.on_primary.default.green}}, {{colors.on_primary.default.blue}}],
+    "fg": [{{colors.primary.default.red}}, {{colors.primary.default.green}}, {{colors.primary.default.blue}}],
+    "cursor": [{{colors.primary_fixed.default.red}}, {{colors.primary_fixed.default.green}}, {{colors.primary_fixed.default.blue}}],
+    "selection_bg": [{{colors.on_secondary.default.red}}, {{colors.on_secondary.default.green}}, {{colors.on_secondary.default.blue}}],
+    "current_line_bg": [{{colors.primary_container.default.red}}, {{colors.primary_container.default.green}}, {{colors.primary_container.default.blue}}],
+    "line_number_fg": [{{colors.on_surface_variant.default.red}}, {{colors.on_surface_variant.default.green}}, {{colors.on_surface_variant.default.blue}}],
+    "line_number_bg": [{{colors.on_primary.default.red}}, {{colors.on_primary.default.green}}, {{colors.on_primary.default.blue}}]
+  },
+  "ui": {
+    "tab_active_fg": [{{colors.on_surface.default.red}}, {{colors.on_surface.default.green}}, {{colors.on_surface.default.blue}}],
+    "tab_active_bg": [{{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}],
+    "tab_inactive_fg": [{{colors.tertiary_fixed_dim.default.red}}, {{colors.tertiary_fixed_dim.default.green}}, {{colors.tertiary_fixed_dim.default.blue}}],
+    "tab_inactive_bg": [{{colors.surface_bright.default.red}}, {{colors.surface_bright.default.green}}, {{colors.surface_bright.default.blue}}],
+    "tab_separator_bg": [{{colors.on_tertiary_fixed.default.red}}, {{colors.on_tertiary_fixed.default.green}}, {{colors.on_tertiary_fixed.default.blue}}],
+    "status_bar_fg": [{{colors.tertiary.default.red}}, {{colors.tertiary.default.green}}, {{colors.tertiary.default.blue}}],
+    "status_bar_bg": [{{colors.on_tertiary.default.red}}, {{colors.on_tertiary.default.green}}, {{colors.on_tertiary.default.blue}}],
+    "prompt_fg": [46, 52, 64],
+    "prompt_bg": [163, 190, 140],
+    "prompt_selection_fg": [{{colors.on_secondary.default.red}}, {{colors.on_secondary.default.green}}, {{colors.on_secondary.default.blue}}],
+    "prompt_selection_bg": [{{colors.secondary.default.red}}, {{colors.secondary.default.green}}, {{colors.secondary.default.blue}}],
+    "popup_border_fg": [76, 86, 106],
+    "popup_bg": [{{colors.tertiary.default.red}}, {{colors.tertiary.default.green}}, {{colors.tertiary.default.blue}}],
+    "popup_selection_bg": [{{colors.on_tertiary.default.red}}, {{colors.on_tertiary.default.green}}, {{colors.on_tertiary.default.blue}}],
+    "popup_text_fg": [{{colors.tertiary.default.red}}, {{colors.tertiary.default.green}}, {{colors.tertiary.default.blue}}],
+    "suggestion_bg": [{{colors.on_secondary.default.red}}, {{colors.on_secondary.default.green}}, {{colors.on_secondary.default.blue}}],
+    "suggestion_selected_bg": [{{colors.secondary.default.red}}, {{colors.secondary.default.green}}, {{colors.secondary.default.blue}}],
+    "help_bg": [46, 52, 64],
+    "help_fg": [216, 222, 233],
+    "help_key_fg": [136, 192, 208],
+    "help_separator_fg": [76, 86, 106],
+    "help_indicator_fg": [191, 97, 106],
+    "help_indicator_bg": [46, 52, 64],
+    "split_separator_fg": [76, 86, 106]
+  },
+  "search": {
+    "match_bg": [235, 203, 139],
+    "match_fg": [46, 52, 64]
+  },
+  "diagnostic": {
+    "error_fg": [191, 97, 106],
+    "error_bg": [59, 46, 50],
+    "warning_fg": [235, 203, 139],
+    "warning_bg": [59, 56, 46],
+    "info_fg": [129, 161, 193],
+    "info_bg": [46, 52, 64],
+    "hint_fg": [76, 86, 106],
+    "hint_bg": [46, 52, 64]
+  },
+  "syntax": {
+    "keyword": [129, 161, 193],
+    "string": [163, 190, 140],
+    "comment": [76, 86, 106],
+    "function": [136, 192, 208],
+    "type": [143, 188, 187],
+    "variable": [216, 222, 233],
+    "constant": [180, 142, 173],
+    "operator": [129, 161, 193]
+  }
+}

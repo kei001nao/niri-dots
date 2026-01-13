@@ -4,7 +4,8 @@
          "preferences": {
             "gridRows": "5",
             "wallpaperPath": "/home/kei/Pictures/Wallpapers/",
-            "colorGenTool": "matugen"
+            "colorGenTool": "none",
+            "postCommand": "/home/kei/.config/scripts/theme-only-sync.sh ${wallpaper}"
          }
       }
    }

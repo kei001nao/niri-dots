@@ -13,7 +13,7 @@ on-touch=invoke-default-action
 
 # [ STYLE OPTIONS ]
 font= JetBrainsMono Nerd Font 10
-background-color={{colors.on_tertiary.default.hex}}
+background-color={{colors.on_primary_fixed.default.hex}}
 text-color={{colors.primary.default.hex}}
 # background-color=#2D353B
 # text-color=#D3C6AA
@@ -25,7 +25,7 @@ margin=10
 outer-margin=0
 padding=16
 
-border-color={{colors.secondary_container.default.hex}}
+border-color={{colors.secondary.default.hex}}
 # border-color=#3A94C5
 border-size=2
 border-radius=0
@@ -127,7 +127,7 @@ layer=overlay
 
 # Critical
 [urgency=critical]
-border-color={{colors.error_container.default.hex}}
+border-color={{colors.error.default.hex}}
 # border-color=#E67E80
 # background-color=#2D353B
 # text-color=#D3C6AA

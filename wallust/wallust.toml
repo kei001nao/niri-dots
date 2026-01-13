@@ -11,7 +11,7 @@
 
 # How the image is parse, in order to get the colors:
 # full - resized - wal - thumb -  fastresize - kmeans
-backend = "fastresize"
+backend = "full"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed
@@ -23,7 +23,7 @@ color_space = "lab"
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16
-palette = "harddark"
+palette = "softdark16"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
@@ -44,7 +44,7 @@ check_contrast = true
 # target: ABSOLUTE path in which to place a file with generated templated values.
 # ¡ If either one is a directory, then both SHOULD be one. !
 # zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
-alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.toml' }
+# alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.toml' }
 
 kitty = { src = 'kitty.conf', dst = '~/.config/kitty/colors.conf' }
 
@@ -58,12 +58,14 @@ vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
 
 vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
 
-neopywal = { src = 'neopywal.vim', dst = '~/.cache/wallust/colors_neopywal.vim' }
+# neopywal = { src = 'neopywal.vim', dst = '~/.cache/wallust/colors_neopywal.vim' }
 
-rofi = { src = 'rofi.rasi', dst = '~/.config/rofi/colors/wallust.rasi' }
+# rofi = { src = 'rofi.rasi', dst = '~/.config/rofi/colors/wallust.rasi' }
 
 mako = { src = 'mako', dst = '~/.config/mako/config' }
 
-zathurarc = { src = 'zathurarc', dst = '~/.config/zathura/zathurarc' }
+# zathurarc = { src = 'zathurarc', dst = '~/.config/zathura/zathurarc' }
 
 vicinae = { src = 'vicinae.toml', dst = '~/.local/share/vicinae/themes/wallust.toml'}
+
+

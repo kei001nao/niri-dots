@@ -737,9 +737,10 @@ main() {
     log_success "Wallpaper applied, no theme changes needed"
   fi
 
-  log_success "$wallpaper_variation"
+  log_success "$wallpaper_variation : $wallpaper_path"
   #update_gtk_settings "$gtk_theme" "$wallpaper_variation"
-  if ! matugen image "$wallpaper_path" -m "$wallpaper_variation"> /dev/null; then
+  #if ! matugen image "$wallpaper_path" -m "$wallpaper_variation"> /dev/null; then
+  if ! matugen image "$wallpaper_path"> /dev/null; then
       log_warn "matugen theme generation failed, continuing..."
   else
       log_success "matugen theme generation completed $wallpaper_variation"

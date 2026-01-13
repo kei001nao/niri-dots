@@ -16,6 +16,7 @@ selected=$(echo -en "$options" | vicinae dmenu -p ">" --no-section --width 200 -
 case "$selected" in
     "　Network")
         kitty --app-id=impala -e impala
+        # vicinae vicinae://extensions/sovereign/wifi-commander/scan-wifi
         ;;
     "　Bluetooth")
         kitty --app-id=bluetui -e bluetui
