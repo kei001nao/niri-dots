@@ -125,6 +125,18 @@ ignore-timeout=1
 margin=10
 layer=overlay
 
+[category=battery-low]
+border-color={{colors.secondary.default.hex}}
+default-timeout=5000
+
+[category=battery-critical]
+border-color={{colors.error.default.hex}}
+default-timeout=20000
+
+[category=battery-danger]
+border-color={{colors.error.default.hex}}
+default-timeout=0
+
 # Critical
 [urgency=critical]
 border-color={{colors.error.default.hex}}

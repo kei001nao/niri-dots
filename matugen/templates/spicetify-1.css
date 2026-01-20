@@ -1,0 +1,17 @@
+/* Matugen generated colors for Spicetify + Hazy */
+:root {
+    --spice-main: {{colors.on_primary_fixed.default.hex}};
+    --spice-main-rgb: {{colors.on_primary_fixed.default.rgb}};
+
+    --spice-text: {{colors.on_surface.default.hex}} !important;
+    --spice-subtext: {{colors.on_surface_variant.default.hex}} !important;
+    
+    --spice-button: {{colors.primary.default.hex}} !important;
+    --spice-button-active: {{colors.primary.default.hex}} !important;
+    --spice-accent: {{colors.primary.default.hex}} !important;
+    
+    --spice-player: {{colors.surface_container.default.hex}} !important;
+    --spice-card: {{colors.surface_container_highest.default.hex}} !important;
+    --spice-notification: {{colors.secondary_container.default.hex}} !important;
+    --spice-highlight: {{colors.outline_variant.default.hex}} !important;
+}

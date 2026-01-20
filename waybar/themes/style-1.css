@@ -1,0 +1,235 @@
+@import "./colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background:  alpha(@on_primary_fixed,0.9);
+  /* background: alpha(@theme_base_color,0.9); */
+}
+
+#custom-cachy:hover,
+/* #cpu:hover, */
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#pulseaudio.sink-muted:hover,
+#custom-powermenu:hover {
+  opacity: 0.6;
+}
+ 
+#custom-cachy,
+#power-profiles-daemon,
+#idle_inhibitor,
+#custom-updates,
+#cpu,
+#clock,
+#mpris,
+#custom-menu,
+#tray,
+#privacy,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#battery,
+#custom-powermenu {
+  color: @primary;    /* @color7;  white*/
+  padding: 6px 0;
+}
+
+#custom-cachy {
+  color: @tertiary;
+}
+
+#power-profiles-daemon {
+  padding: 12px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  background-color: transparent;
+}
+#power-profiles-daemon.performance {
+  color: @secondary;   /* @color1;  red*/
+}
+#power-profiles-daemon.balanced {
+  color: @primary;    /* @color2;  green*/
+}
+#power-profiles-daemon.power-saver {
+  color: @tertiary;   /* @color3;  yellow*/
+}
+
+#idle_inhibitor {
+  padding: 6px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  background-color: transparent;
+}
+#idle_inhibitor.activated {
+  color: @error;              /*@color1;  red*/
+}
+#idle_inhibitor.deactivated {
+  color: @primary;             /* @color3;  yellow*/
+}
+
+#custom-updates {
+  padding: 8px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  color: @error;               /*@color1;  red*/
+  background-color: transparent;
+}
+#custom-updates.icn {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px -3px;
+  color: @error;               /* @color1;  red*/
+  background-color: transparent;
+}
+
+#workspaces {
+  border: 1px solid alpha(@on_surface, 0.8);
+  border-radius: 2px;
+  background-color: alpha(@on_primary,0.8);
+  opacity: 0.95;
+}
+
+#workspaces button {
+  padding: 0px 0px;
+  margin: 1px 0px;
+  border-radius: 2px;
+  color: alpha(@on_surface, 0.8);
+  background-color: alpha(@on_surface, 0.3);
+  border: 1px solid alpha(@on_surface, 0.8);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
+#workspaces button.empty {
+  border-radius: 2px;
+  color: @error;
+  background-color: alpha(@on_primary,0.9);
+  border: 1px groove alpha(@on_surface, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.6;
+}
+#workspaces button.active{
+  border-radius: 2px;
+  color: alpha(@on_primary, 0.9);
+  background-color: alpha(@on_surface, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
+}
+#workspaces button.default {
+  color: @primary;  /*green*/
+}
+#workspaces button:hover {
+  border-radius: 2px;
+  color: @on_surface;
+  background: linear-gradient(180deg, @theme_base_color 75%, @on_surface);
+  opacity: 0.9;
+}
+
+
+#cpu.percentage {
+  padding: 0px 0;
+}
+
+#clock {
+  color: @tertiary;
+}
+#clock.date {
+  color: @primary;
+}
+#clock.day {
+  color: @secondary;
+}
+
+
+#mpris {
+  color: @secondary;
+}
+
+#network.disabled {
+  color: @error;  /*red*/
+}
+#network.wifi {
+  color: @tertiary;  /*green*/
+}
+#network.ethernet {
+  color: @primary;  /*yellow*/
+}
+
+#bluetooth.disabled {
+  color: @error;  /*red*/
+}
+#bluetooth.connected {
+  color: @secondary;  /*blue*/
+}
+
+#pulseaudio {
+  color: @primary;
+}
+#pulseaudio.sink-muted:not(.microphone) {
+  color: @tertiary;  /*yellow*/
+}
+#pulseaudio.microphone.source-muted {
+  color: @error;  /*red*/
+}
+#pulseaudio.volume {
+  padding: 0px 0px 10px 0px;
+
+}
+
+#backlight.{
+  color: @secondary;
+}
+#backlight.percentage {
+  padding: 0px 0px 6px 0px;
+}
+
+#pulseaudio-slider,
+#backlight-slider {
+min-height: 80px;
+}
+#pulseaudio-slider slider,
+#backlight-slider slider {
+background: transparent;
+}
+#pulseaudio-slider trough,
+#backlight-slider trough {
+min-width: 8px;
+}
+#pulseaudio-slider highlight {
+background: @primary;
+}
+#backlight-slider highlight {
+background: @secondary;
+}
+
+#battery {
+  /* color: @tertiary; */
+}
+#battery.plugged {
+  color: @tertiary;  /*blue*/
+}
+#battery.charging {
+  color: @secondary;  /*green*/
+}
+#battery.critical {
+  color: @error;  /*red*/
+}
+#battery.percentage {
+  padding: 0px 0px 10px 0px;
+}
+
+
+tooltip {
+  background: @background;
+  border: 1px solid @foreground;
+}
+tooltip * {
+  color: @foreground;
+  margin: 2px;
+  background: @background;
+}

@@ -1,0 +1,54 @@
+{
+    "editor.mouseWheelZoom": true,
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.smoothScrolling": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.mouseWheelScrollSensitivity": 2,
+    "editor.wordWrap": "on",
+    "editor.cursorBlinking": "expand",
+    "terminal.integrated.fontSize": 14,
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.colorTheme": "Wallust-Bordered-Dark",
+    "git.enableSmartCommit": true,
+    "files.autoSave": "afterDelay",
+
+    "workbench.colorCustomizations": {
+        // 全体のアクセントカラー
+        "activityBar.background": "{{colors.on_primary_fixed.default.hex}}",
+        "activityBar.foreground": "{{colors.on_surface.default.hex}}",
+        "activityBarBadge.background": "{{colors.primary.default.hex}}",
+        "activityBarBadge.foreground": "{{colors.on_primary.default.hex}}",
+
+        // サイドバー
+        "sideBar.background": "{{colors.on_primary_fixed.default.hex}}",
+        "sideBar.foreground": "{{colors.on_surface_variant.default.hex}}",
+        "sideBarSectionHeader.background": "{{colors.surface_container_high.default.hex}}",
+
+        // エディタ本体
+        "editor.background": "{{colors.on_primary_fixed.default.hex}}",
+        "editor.foreground": "{{colors.on_surface.default.hex}}",
+        "editorLineNumber.foreground": "{{colors.outline_variant.default.hex}}",
+        "editorLineNumber.activeForeground": "{{colors.primary.default.hex}}",
+
+        // タイトルバーとステータスバー
+        "titleBar.activeBackground": "{{colors.surface_container_lowest.default.hex}}",
+        "statusBar.background": "{{colors.primary.default.hex}}",
+        "statusBar.foreground": "{{colors.on_primary.default.hex}}",
+
+        // ボタンや入力欄
+        "button.background": "{{colors.primary.default.hex}}",
+        "button.foreground": "{{colors.on_primary.default.hex}}",
+        "input.background": "{{colors.surface_container_highest.default.hex}}",
+        "input.border": "{{colors.outline.default.hex}}",
+
+        // タブ
+        "tab.activeBackground": "{{colors.on_primary_fixed.default.hex}}",
+        "tab.inactiveBackground": "{{colors.surface_container_low.default.hex}}",
+        "tab.activeForeground": "{{colors.primary.default.hex}}"
+    }
+
+}

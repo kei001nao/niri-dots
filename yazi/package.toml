@@ -1,0 +1,22 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "57f1863"
+hash = "ce67445ebb1bf3d97b8e44f50904b2c5"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "57f1863"
+hash = "a638db397a5a41d3f3a08a7427ccead1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "57f1863"
+hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "69d7d4c"
+hash = "38dac2fc8f4b50bbdaa46e699720a54a"
+
+[flavor]
+deps = []

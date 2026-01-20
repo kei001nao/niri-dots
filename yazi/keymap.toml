@@ -3,7 +3,11 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [mgr]
-
+prepend_keymap = [
+	{ on  = "f", run  = "plugin jump-to-char", desc = "Jump to char" },
+	{ on  = [ "c", "m" ], run  = "plugin chmod", desc = "Chmod on selected files" },
+	{ on = "R", run = "plugin recycle-bin", desc = "Open Recycle Bin menu" }
+]
 keymap = [
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },
 	{ on = "<C-[>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },

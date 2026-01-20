@@ -52,11 +52,6 @@ window-rule {
 
 // Application-specific rules
 window-rule {
-  match app-id=r#"virt-manager$"#
-  open-on-workspace "VM"
-}
-
-window-rule {
   match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
   match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
   match app-id=r#"Chromium-browser$"# title="^| Spotify$"
@@ -259,6 +254,31 @@ window-rule {
   match is-active=true
   opacity 0.96
 }
+
+window-rule {
+  match app-id="rmpc-scratchpad"  
+  opacity 0.85
+}
+
+window-rule {
+  match app-id=r#"virt-manager$"#
+  open-on-workspace "VM"
+  opacity 1.0
+}
+window-rule {
+  match app-id=r#"spotify$"#
+  open-on-workspace "music"
+  open-maximized-to-edges true
+  opacity 1.0
+}
+window-rule {
+  match app-id=r#"spotify$"#
+  match app-id=r#"spotube$"#
+  open-on-workspace "music"
+  open-maximized true
+  opacity 1.0
+}
+
 
 // Inactive window transparency
 window-rule {

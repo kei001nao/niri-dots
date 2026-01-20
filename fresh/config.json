@@ -1,7 +1,38 @@
 {
   "version": 1,
   "theme": "matugen",
+  "locale": "ja",
   "file_browser": {
     "show_hidden": true
+  },
+  "languages": {
+    "bash": {
+      "tab_size": 2
+    },
+    "typescript": {
+      "tab_size": 2
+    },
+    "yaml": {
+      "tab_size": 2
+    },
+    "toml": {
+      "tab_size": 2
+    },
+    "kdl": {
+      "extensions": [
+        "kdl"
+      ],
+      "grammar": "Niri Config",
+      "comment_prefix": "//",
+      "auto_indent": true,
+      "highlighter": "auto",
+      "show_whitespace_tabs": true,
+      "use_tabs": false,
+      "tab_size": 2,
+      "format_on_save": false
+    },
+    "json": {
+      "tab_size": 2
+    }
   }
 }

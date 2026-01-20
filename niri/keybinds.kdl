@@ -11,16 +11,8 @@
 
 // keybind Section
 binds {
-
-    // Custom scratchpad support
-    //Mod+Ctrl+S hotkey-overlay-title="Spotify Scratchpad Toggle" { spawn-sh "niri-scratchpad spotify"; }
-    //Mod+Ctrl+F hotkey-overlay-title="Nemo Scratchpad Toggle" { spawn-sh "niri-scratchpad nemo"; }
-
-    //Mod+Slash           repeat=false    hotkey-overlay-title="focus workspace scratch" { focus-workspace "scratch"; }
-
     // Menu
     MOD+ALT+SPACE      repeat=false    hotkey-overlay-title="Main Menu" { spawn-sh "$HOME/.config/scripts/vicinae-main-menu.sh"; }
-
 
     // Power Menu
     MOD+X              repeat=false    hotkey-overlay-title="Power Menu" { spawn-sh "$HOME/.config/scripts/vicinae-power-menu.sh"; }
@@ -45,13 +37,18 @@ binds {
     MOD+SHIFT+slash                    { show-hotkey-overlay; }
     // Open overview
     MOD+O              repeat=false    { toggle-overview; }
-
+        
     // Music App
     MOD+M              repeat=false    hotkey-overlay-title="RMPC" { spawn-sh "kitty --app-id=rmpc -e rmpc"; }    
-
+    MOD+ALT+M          repeat=false    hotkey-overlay-title="RMPC(Scratchpad)" { spawn-sh "piri scratchpads rmpc toggle"; }
+    MOD+S              repeat=false    hotkey-overlay-title="Spotify" { spawn-sh "spicetify apply"; }
+    MOD+SHIFT+S        repeat=false    hotkey-overlay-title="Spotube" { spawn-sh "spotube"; }
+        
     // Virtual Machine
     MOD+V              repeat=false    hotkey-overlay-title="Virt-Manager" { spawn-sh "virt-manager"; }    
-    
+
+    MOD+SHIFT+V              repeat=false    hotkey-overlay-title="VS Code" { spawn-sh "code"; }
+
     // Application Shortcuts
     // Terminal
    MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
@@ -73,12 +70,12 @@ binds {
     MOD+ALT+E          repeat=false    hotkey-overlay-title="SUperfile" { spawn-sh "kitty -e spf"; }
 
     // Lock
-    MOD+SHIFT+L        repeat=false    hotkey-overlay-title="Lock Screen: hyprlock" { spawn "hyprlock"; }
+    MOD+SHIFT+L        repeat=false    hotkey-overlay-title="Lock Screen: hyprlock" { spawn-sh "~/.config/hypr/hyprlock/lock.sh"; }
 
     // Center Column & Clipboard
     MOD+C              repeat=false    hotkey-overlay-title="Center Column" { center-column; }
     MOD+SHIFT+C        repeat=false    hotkey-overlay-title="Center Visible Column"  { center-visible-columns; }
-    MOD+CTRL+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    MOD+ALT+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // Media Keys
     XF86AudioRaiseVolume   allow-when-locked=true   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01+"; }
@@ -207,7 +204,7 @@ binds {
     // Window Modes
     MOD+T              repeat=false     { toggle-window-floating; }
     Mod+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
-
+    
     MOD+F              repeat=false     { maximize-column; }
     Mod+SHIFT+F        repeat=false     { maximize-window-to-edges; }
     MOD+ALT+F          repeat=false     { fullscreen-window; }

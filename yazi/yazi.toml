@@ -3,9 +3,12 @@
 [opener]
 play = [
     { run = 'celluloid "$@"', orphan = true, for = "unix" },
+    { run = 'mpv "$@"', orphan = true, for = "unix" }
 ]
 edit = [
     { run = 'fresh "$@"', desc = "fresh", block = true, for = "unix" },
+    { run = 'nano "$@"', desc = "nano", block = true, for = "unix" },
+    { run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" }
 ]
 open = [
     { run = 'xdg-open "$1"', desc = "Open", for = "unix" },
@@ -35,11 +38,11 @@ rules = [
     # Folder
     { name = "*/", use = ["open", "edit", "reveal"] },
     # Text
-    { mime = "text/*", use = ["edit", "reveal"] },
+    { mime = "text/*", use = ["edit"] },
     # Markdown
-    { mime = "text/markdown", use = ["markdown", "edit", "reveal"] },
+    { mime = "text/markdown", use = ["markdown", "edit"] },
     # Image
-    { mime = "image/*", use = ["open", "reveal"] },
+    { mime = "image/*", use = ["pdf", "reveal"] },
     # Media
     { mime = "video/*", use = ["play", "reveal"] },
     { mime = "audio/*", use = ["play", "reveal"] },

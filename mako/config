@@ -14,7 +14,7 @@ on-touch=invoke-default-action
 # [ STYLE OPTIONS ]
 font= JetBrainsMono Nerd Font 10
 background-color=#001e2b
-text-color=#8ecff2
+text-color=#8dcff1
 # background-color=#2D353B
 # text-color=#D3C6AA
 
@@ -25,7 +25,7 @@ margin=10
 outer-margin=0
 padding=16
 
-border-color=#b5c9d7
+border-color=#b4cad6
 # border-color=#3A94C5
 border-size=2
 border-radius=0
@@ -124,6 +124,18 @@ text-alignment=center
 ignore-timeout=1
 margin=10
 layer=overlay
+
+[category=battery-low]
+border-color=#b4cad6
+default-timeout=5000
+
+[category=battery-critical]
+border-color=#ffb4ab
+default-timeout=20000
+
+[category=battery-danger]
+border-color=#ffb4ab
+default-timeout=0
 
 # Critical
 [urgency=critical]

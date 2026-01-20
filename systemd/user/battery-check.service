@@ -1,0 +1,7 @@
+[Unit]
+Description=Battery Multi-level Monitor for mako
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/scripts/battery-monitor.sh
+PassEnvironment=DISPLAY WAYLAND_DISPLAY XDG_RUNTIME_DIR

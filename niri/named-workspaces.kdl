@@ -3,11 +3,8 @@
 workspace "one"
 workspace "two"
 workspace "three"
-//workspace "chat"
 //workspace "notion"
 workspace "VM"
-//workspace "music"
+workspace "music"
 
 //workspace "scratch"
-
-

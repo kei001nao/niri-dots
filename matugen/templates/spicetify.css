@@ -1,0 +1,17 @@
+/* Matugen generated colors for Spicetify + Comfy */
+:root {
+    --spice-main: {{colors.on_primary.default.hex}};
+    --spice-sidebar: {{colors.surface_container.default.hex}};
+    --spice-player: {{colors.surface_container_low.default.hex}};
+    --spice-card: {{colors.surface_container_highest.default.hex}};
+    --spice-text: {{colors.on_surface.default.hex}};
+    --spice-subtext: {{colors.on_surface_variant.default.hex}};
+    --spice-button: {{colors.primary.default.hex}};
+    --spice-button-active: {{colors.primary.default.hex}};
+    --spice-accent: {{colors.primary.default.hex}};
+    --spice-notification: {{colors.secondary_container.default.hex}};
+
+    --spice-rgb-main: {{colors.on_primary.default.rgb}};
+    --spice-rgb-text: {{colors.on_surface.default.rgb}};
+    --spice-rgb-button: {{colors.primary.default.rgb}};
+}
