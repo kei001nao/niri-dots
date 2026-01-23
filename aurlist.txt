@@ -2,11 +2,11 @@ awww-git
 clrsync-git
 crudini
 fresh-editor-bin
-#mangowc-git
-#mpvc-git
-#niri-switch
+mangowc-git
+mpvc-git
+niri-switch
 paleta
-#pyprland
+pyprland
 python-iniparse
 qt6ct-kde
 spicetify-cli
@@ -15,6 +15,6 @@ spotube-bin
 sunsetr
 vicinae-bin
 visual-studio-code-bin
-#wallust
+wallust
 waybar-module-pacman-updates-git
 wlroots-asan-git

@@ -1,6 +1,6 @@
 7zip
 accountsservice
-#alacritty
+alacritty
 alsa-firmware
 alsa-plugins
 alsa-utils
@@ -77,6 +77,7 @@ firefox-i18n-ja
 fsarchiver
 git
 glances
+gnome-clocks
 grimblast-git
 grub
 grub-btrfs-support
@@ -105,9 +106,10 @@ iptables-nft
 iwd
 jfsutils
 kate
+kclock
 kdenlive
 kitty
-#konsole
+konsole
 kvantum
 kvantum-qt5
 less
@@ -261,6 +263,7 @@ virt-install
 virt-manager
 virt-viewer
 vlc-plugins-all
+vorbis-tools
 vpl-gpu-rt
 vulkan-intel
 waybar
