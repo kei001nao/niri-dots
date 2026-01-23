@@ -459,7 +459,7 @@ update_gtk_settings() {
   fi
 }
 
-manage_gtk_css() {
+manage_symlinks() {
   local -r theme="$1"
   local target_dir=""
 
@@ -478,43 +478,28 @@ manage_gtk_css() {
   done
 
   [[ -n "$target_dir" ]] || {
-    log_warn "Theme assets not found: $theme, skipping GTK CSS management"
+    log_warn "Theme assets not found: $theme, skipping symlinks"
     return 1
   }
 
-  # Manage CSS for GTK-3.0 and GTK-4.0
-  for version in "3.0" "4.0"; do
-    local config_dir="$HOME/.config/gtk-$version"
-    mkdir -p "$config_dir"
+  # Create symlinks for GTK 4.0
+  local -r gtk4_dir="$HOME/.config/gtk-4.0"
+  mkdir -p "$gtk4_dir"
 
-    local theme_css_path="$target_dir/gtk-$version/gtk.css"
-    local user_css_path="$config_dir/gtk.css"
+  declare -A links=(
+    ["$gtk4_dir/gtk.css"]="gtk-4.0/gtk.css"
+    ["$gtk4_dir/gtk-dark.css"]="gtk-4.0/gtk-dark.css"
+    ["$gtk4_dir/assets"]="gtk-4.0/assets"
+  )
 
-    if [[ ! -f "$theme_css_path" ]]; then
-      log_warn "Theme CSS for GTK $version not found at $theme_css_path, skipping..."
-      continue
-    fi
+  # Create symlinks
+  for link in "${!links[@]}"; do
+    local target="$target_dir/${links[$link]}"
+    [[ -e "$target" ]] || continue
 
-    log_info "Generating $user_css_path for GTK $version"
-    # Create a new gtk.css that imports both the theme's css and matugen's colors.css
-    cat > "$user_css_path" << EOF
-@import url('$theme_css_path');
-@import url('colors.css');
-EOF
-
-    # Also symlink assets directory if it exists, as it might be needed by the theme
-    local assets_path="$target_dir/gtk-$version/assets"
-    if [[ -d "$assets_path" ]]; then
-      ln -sf "$assets_path" "$config_dir/assets"
-      log_info "Linked assets for GTK $version"
-    fi
+    mkdir -p "$(dirname "$link")"
+    ln -sf "$target" "$link" && log_info "Created symlink: ${link##*/}"
   done
-
-  # Clean up old gtk-dark.css symlink in gtk-4.0 if it exists
-  if [[ -L "$HOME/.config/gtk-4.0/gtk-dark.css" ]]; then
-    rm "$HOME/.config/gtk-4.0/gtk-dark.css"
-    log_info "Removed old gtk-dark.css symlink from gtk-4.0 config"
-  fi
 }
 
 set_gtk_theme() {
@@ -548,7 +533,7 @@ set_gtk_theme() {
   #update_gtk_settings "$gtk_theme" "$variation"
   manage_gtk_config "3.0" "$gtk_theme" "$variation"
   manage_gtk_config "4.0" "$gtk_theme" "$variation"
-  manage_gtk_css "$gtk_theme"
+  manage_symlinks "$gtk_theme"
   update_gtk_settings "$gtk_theme" "$variation"
   update_xsettingsd "$gtk_theme" "$icon_theme"
 

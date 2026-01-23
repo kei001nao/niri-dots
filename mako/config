@@ -13,8 +13,8 @@ on-touch=invoke-default-action
 
 # [ STYLE OPTIONS ]
 font= JetBrainsMono Nerd Font 10
-background-color=#001e2b
-text-color=#8dcff1
+background-color=#00210f
+text-color=#94d5a8
 # background-color=#2D353B
 # text-color=#D3C6AA
 
@@ -25,7 +25,7 @@ margin=10
 outer-margin=0
 padding=16
 
-border-color=#b4cad6
+border-color=#b6ccb9
 # border-color=#3A94C5
 border-size=2
 border-radius=0
@@ -126,7 +126,7 @@ margin=10
 layer=overlay
 
 [category=battery-low]
-border-color=#b4cad6
+border-color=#b6ccb9
 default-timeout=5000
 
 [category=battery-critical]

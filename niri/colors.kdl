@@ -1,7 +1,7 @@
 // color
 layout {
   border {
-    active-color "#c8c2eacc"
+    active-color "#a3cddbcc"
   }
 
   insert-hint {
@@ -9,7 +9,7 @@ layout {
   }
 
   tab-indicator {
-    active-color "#8dcff1"
+    active-color "#94d5a8"
   }
 
 
@@ -22,7 +22,7 @@ layout {
 
 recent-windows {
     highlight {
-        active-color "#c8c2eacc"
+        active-color "#a3cddbcc"
     }
 }
 
