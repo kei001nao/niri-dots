@@ -9,17 +9,24 @@
   "margin-right": 0,
   "spacing": 0,
   "include": ["~/.config/waybar/modules.json"],
-  //"modules-left": ["custom/cachy", clock", "cpu", "custom/updatespacman",],  "privacy" ,cffi/niri-workspaces-enhanced
-  "modules-left": ["custom/cachy", "clock", "clock#date", "clock#day", "cpu", "cpu#percentage", "group/top1"],
-  "modules-center": ["mpris", "niri/workspaces"],
-  //"modules-center": ["mpd", "mpris", "cffi/niri-workspaces-enhanced"],
-  "modules-right": [
-    "group/extras",
-    "network",
-    "bluetooth",
-    "pulseaudio#microphone",
-    "group/audio", "pulseaudio#volume",
-    "group/brightness","backlight#percentage",
-    "battery","battery#percentage"
-  ]
+  "modules-left": ["custom/cachy", 
+                   "clock", 
+                   "clock#date", 
+                   "clock#day", 
+                   "cpu", 
+                   "cpu#percentage", 
+                   "idle_inhibitor", 
+                   "custom/updates#icn", 
+                   "custom/updates"],
+  "modules-center": ["mpris", 
+                     "niri/workspaces"],
+  "modules-right": ["group/extras",
+                    "group/networks",
+                    "pulseaudio#microphone",
+                    "group/audio", 
+                    "pulseaudio#volume",
+                    "group/brightness",
+                    "backlight#percentage",
+                    "group/power-profile",
+                    "battery#percentage"]
 }

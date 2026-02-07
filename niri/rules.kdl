@@ -250,9 +250,17 @@ window-rule {
   max-height 800
 }
 
+// Window Opacity
 window-rule {
   match is-active=true
   opacity 0.96
+}
+
+window-rule {
+  match app-id="mpv"
+  match app-id="io.github.celluloid_player.Celluloid"
+  match app-id="firefox"
+  opacity 1.0
 }
 
 window-rule {
@@ -265,12 +273,7 @@ window-rule {
   open-on-workspace "VM"
   opacity 1.0
 }
-window-rule {
-  match app-id=r#"spotify$"#
-  open-on-workspace "music"
-  open-maximized-to-edges true
-  opacity 1.0
-}
+
 window-rule {
   match app-id=r#"spotify$"#
   match app-id=r#"spotube$"#

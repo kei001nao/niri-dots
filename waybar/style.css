@@ -8,148 +8,148 @@
 }
 
 window#waybar {
-  background:  alpha(@on_primary_fixed,0.9);
-  /* background: alpha(@theme_base_color,0.9); */
-}
-
-#custom-cachy:hover,
-/* #cpu:hover, */
-#network:hover,
-#bluetooth:hover,
-#pulseaudio:hover,
-#pulseaudio.microphone:hover,
-#pulseaudio.sink-muted:hover,
-#custom-powermenu:hover {
-  opacity: 0.6;
+  background: rgba(0, 0, 0, 0);
 }
 
 #custom-cachy,
-#power-profiles-daemon,
+#clock,
+#cpu,
 #idle_inhibitor,
 #custom-updates,
-#cpu,
-#clock,
 #mpris,
 #custom-menu,
 #tray,
-#privacy,
 #network,
 #bluetooth,
 #pulseaudio,
 #pulseaudio.microphone,
 #backlight,
 #battery,
-#custom-powermenu {
-  color: @primary;    /* @color7;  white*/
-  padding: 6px 0;
+#power-profiles-daemon {
+  color: @primary;
+  padding: 6px 0px 0px 0px;
+  background-color: alpha(@on_primary_fixed,0.9);    
 }
 
+/* --------------------------------------------------- */
 #custom-cachy {
   color: @tertiary;
-}
-
-#power-profiles-daemon {
-  padding: 12px 0px 0px 0px;
-  margin: 0px 0px 0px -2px;
-  background-color: transparent;
-}
-#power-profiles-daemon.performance {
-  color: @secondary;   /* @color1;  red*/
-}
-#power-profiles-daemon.balanced {
-  color: @primary;    /* @color2;  green*/
-}
-#power-profiles-daemon.power-saver {
-  color: @tertiary;   /* @color3;  yellow*/
-}
-
-#idle_inhibitor {
-  padding: 6px 0px 0px 0px;
-  margin: 0px 0px 0px -2px;
-  background-color: transparent;
-}
-#idle_inhibitor.activated {
-  color: @error;              /*@color1;  red*/
-}
-#idle_inhibitor.deactivated {
-  color: @primary;             /* @color3;  yellow*/
-}
-
-#custom-updates {
-  padding: 8px 0px 0px 0px;
-  margin: 0px 0px 0px -2px;
-  color: @error;               /*@color1;  red*/
-  background-color: transparent;
-}
-#custom-updates.icn {
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 0px -3px;
-  color: @error;               /* @color1;  red*/
-  background-color: transparent;
-}
-
-#workspaces {
-  border: 1px solid alpha(@on_surface, 0.8);
-  border-radius: 2px;
-  background-color: alpha(@on_primary,0.8);
-  opacity: 0.95;
-}
-
-#workspaces button {
-  padding: 0px 0px;
-  margin: 1px 0px;
-  border-radius: 2px;
-  color: alpha(@on_surface, 0.8);
-  background-color: alpha(@on_surface, 0.3);
-  border: 1px solid alpha(@on_surface, 0.8);
-  transition: all 0.3s ease-in-out;
-  opacity: 0.8;
-}
-#workspaces button.empty {
-  border-radius: 2px;
-  color: @error;
-  background-color: alpha(@on_primary,0.9);
-  border: 1px groove alpha(@on_surface, 0.9);
-  transition: all 0.3s ease-in-out;
-  opacity: 0.6;
-}
-#workspaces button.active{
-  border-radius: 2px;
-  color: alpha(@on_primary, 0.9);
-  background-color: alpha(@on_surface, 0.9);
-  transition: all 0.3s ease-in-out;
-  opacity: 1.0;
-}
-#workspaces button.default {
-  color: @primary;  /*green*/
-}
-#workspaces button:hover {
-  border-radius: 2px;
-  color: @on_surface;
-  background: linear-gradient(180deg, @theme_base_color 75%, @on_surface);
-  opacity: 0.9;
-}
-
-
-#cpu.percentage {
-  padding: 0px 0;
+  border-radius: 20px 20px 0px 0px;
 }
 
 #clock {
   color: @tertiary;
+  margin: 0px 0px 0px -2px;
 }
-#clock.date {
+/* #clock.date {
   color: @primary;
-}
+} */
 #clock.day {
   color: @secondary;
 }
 
-
-#mpris {
-  color: @secondary;
+#cpu {
+  margin: 0px 0px 0px -2px;
+}
+#cpu.percentage {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
 }
 
+#idle_inhibitor {
+  padding: 6px 0px 16px 0px;
+  margin: 0px 0px 0px -2px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: alpha(@on_primary_fixed,0.9);
+}
+#idle_inhibitor.activated {
+  color: @error;
+}
+#idle_inhibitor.deactivated {
+  color: @primary;
+}
+
+#custom-updates.icn {
+  padding: 4px 0px 0px 0px;
+  margin: 0px 0px 0px -2px;
+  color: @error;
+  border-radius: 20px 20px 0px 0px;
+  background-color: alpha(@on_primary_fixed,0.9);
+}
+#custom-updates {
+  padding: 0px 0px 2px 1px;
+  margin: 0px 0px 0px -3px;
+  color: @error;               /*@color1;  red*/
+  border-radius: 0px 0px 20px 20px;
+  background-color: alpha(@on_primary_fixed,0.9);
+}
+
+/* --------------------------------------------------- */
+#mpris {
+  color: @secondary;
+  background-color: transparent;
+}
+
+#workspaces {
+/*  border: 1px solid alpha(@on_surface, 0.8);
+  border-radius: 2px;
+  opacity: 0.95;
+*/
+  background-color: transparent;
+}
+  
+
+#workspaces button {
+  padding: 6px 0px 6px 0px;
+  margin: 0px 0px 1px 0px;
+  border-radius: 20px;
+  color: alpha(@on_surface, 0.85);
+  background-color: alpha(@on_primary, 0.8);
+  border: 1px solid alpha(@on_surface, 0.8);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.9;
+}
+#workspaces button.empty {
+  /* border-radius: 16px; */
+  color: alpha(@error, 0.7);
+  background-color: @on_primary_fixed;
+  border: 1px groove alpha(@on_surface, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
+}
+#workspaces button.active{
+  /* border-radius: 8px; */
+  color: alpha(@on_primary_fixed, 0.9);
+  background-color: alpha(@primary, 0.9);
+  border: 1px groove alpha(@primary, 0.9);
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
+}
+#workspaces button.default {
+  color: @primary;
+}
+#workspaces button:hover {
+  /* border-radius: 8px; */
+  color: @on_surface;
+  background: linear-gradient(180deg, @surface 75%, @on_surface);
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------- */
+#custom-menu {
+  margin: 0px 0px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#tray {
+  border-radius: 20px 20px 20px 20px;
+  padding: 8px 0px 8px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+#network {
+  padding: 2px 0px 0px 0px;
+}
 #network.disabled {
   color: @error;  /*red*/
 }
@@ -160,6 +160,9 @@ window#waybar {
   color: @primary;  /*yellow*/
 }
 
+#bluetooth {
+  padding: 6px 0px 6px 0px;
+}
 #bluetooth.disabled {
   color: @error;  /*red*/
 }
@@ -169,45 +172,52 @@ window#waybar {
 
 #pulseaudio {
   color: @primary;
+  padding: 0px 0px 0px 0px;
 }
 #pulseaudio.sink-muted:not(.microphone) {
   color: @tertiary;  /*yellow*/
+}
+#pulseaudio.microphone {
+  margin: 0px 0px -3px 0px;
 }
 #pulseaudio.microphone.source-muted {
   color: @error;  /*red*/
 }
 #pulseaudio.volume {
-  padding: 0px 0px 10px 0px;
-
+  padding: 0px 0px 2px 0px;
+  margin: -3px 0px 0px 0px;
 }
 
 #backlight.{
   color: @secondary;
 }
 #backlight.percentage {
-  padding: 0px 0px 6px 0px;
+  padding: 0px 0px 5px 0px;
+  margin: -1px 0px 0px 0px;
 }
+
 
 #pulseaudio-slider,
 #backlight-slider {
-min-height: 80px;
+  min-height: 80px;
+  background-color: alpha(@on_primary_fixed,0.9);  
 }
 #pulseaudio-slider slider,
 #backlight-slider slider {
-background: transparent;
 }
 #pulseaudio-slider trough,
 #backlight-slider trough {
-min-width: 8px;
+  min-width: 8px;
 }
 #pulseaudio-slider highlight {
-background: @primary;
+  background: @primary;
 }
 #backlight-slider highlight {
-background: @secondary;
+  background: @secondary;
 }
 
 #battery {
+  padding: 0px 0px 0px 0px;
   /* color: @tertiary; */
 }
 #battery.plugged {
@@ -220,10 +230,26 @@ background: @secondary;
   color: @error;  /*red*/
 }
 #battery.percentage {
-  padding: 0px 0px 10px 0px;
+  padding: 0px 0px 8px 0px;
+  margin: -1px 2px 0px 0px;
+}
+
+#power-profiles-daemon {
+  padding: 12px 0px 6px 0px;
+  margin: 0px 0px 0px -2px;
+}
+#power-profiles-daemon.performance {
+  color: @secondary;   /* @color1;  red*/
+}
+#power-profiles-daemon.balanced {
+  color: @primary;    /* @color2;  green*/
+}
+#power-profiles-daemon.power-saver {
+  color: @tertiary;   /* @color3;  yellow*/
 }
 
 
+/* --------------------------------------------------- */
 tooltip {
   background: @background;
   border: 1px solid @foreground;

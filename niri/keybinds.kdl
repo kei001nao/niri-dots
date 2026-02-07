@@ -11,14 +11,18 @@
 
 // keybind Section
 binds {
+    // Shortcuts Panel
+    MOD+SHIFT+slash                    { show-hotkey-overlay; }
+    // Open overview
+    MOD+O              repeat=false    { toggle-overview; }
+    
     // Menu
     MOD+ALT+SPACE      repeat=false    hotkey-overlay-title="Main Menu" { spawn-sh "$HOME/.config/scripts/vicinae-main-menu.sh"; }
-
     // Power Menu
     MOD+X              repeat=false    hotkey-overlay-title="Power Menu" { spawn-sh "$HOME/.config/scripts/vicinae-power-menu.sh"; }
 
     // Sunsetr
-    MOD+U               repeat=false    hotkey-overlay-title="Sunset Status" {  spawn-sh "~/.config/scripts/start-sunsetr.sh status"; }
+    MOD+U               repeat=false    hotkey-overlay-title="View Sunset Status" {  spawn-sh "~/.config/scripts/start-sunsetr.sh status"; }
     MOD+SHIFT+U         repeat=false    hotkey-overlay-title="Toggle Sunset DAY" { spawn-sh "~/.config/scripts/start-sunsetr.sh day"; }
     MOD+CTRL+U          repeat=false    hotkey-overlay-title="Toggle Sunset NIGHT" { spawn-sh "~/.config/scripts/start-sunsetr.sh night"; }
     MOD+SHIFT+ALT+U     repeat=false    hotkey-overlay-title="Toggle Sunset GAMING" { spawn-sh "~/.config/scripts/start-sunsetr.sh gaming"; }
@@ -27,29 +31,29 @@ binds {
 
     // Wallpaper Selector
     MOD+W               repeat=false    hotkey-overlay-title="Open Wallpaper vicinae" { spawn-sh "$HOME/.config/scripts/launch_vicinae.sh awww"; }
-    MOD+SHIFT+W         repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
-    // Application Restarts
+    //MOD+SHIFT+W         repeat=false    hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "$HOME/.config/scripts/bgselector.sh"; }
+    // waybar Restarts
     MOD+ALT+W                           hotkey-overlay-title="Toggle View Waybar" { spawn "sh" "-c" "pgrep -x waybar >/dev/null && killall waybar || waybar &"; }
     // use with toggle in waybar (doens't restart if not running)
     // MOD+ALT+W                           { spawn "killall" "-SIGUSR1" "waybar"; }
 
-    // Shortcuts Panel
-    MOD+SHIFT+slash                    { show-hotkey-overlay; }
-    // Open overview
-    MOD+O              repeat=false    { toggle-overview; }
         
+    // Application Shortcuts
     // Music App
     MOD+M              repeat=false    hotkey-overlay-title="RMPC" { spawn-sh "kitty --app-id=rmpc -e rmpc"; }    
     MOD+ALT+M          repeat=false    hotkey-overlay-title="RMPC(Scratchpad)" { spawn-sh "piri scratchpads rmpc toggle"; }
     MOD+S              repeat=false    hotkey-overlay-title="Spotify" { spawn-sh "spicetify apply"; }
     MOD+SHIFT+S        repeat=false    hotkey-overlay-title="Spotube" { spawn-sh "spotube"; }
-        
+
+    // Youtube App
+    MOD+Y              repeat=false    hotkey-overlay-title="Youtube-tui" { spawn-sh "kitty --app-id=youtube-tui -e youtube-tui"; }    
+            
     // Virtual Machine
     MOD+V              repeat=false    hotkey-overlay-title="Virt-Manager" { spawn-sh "virt-manager"; }    
 
-    MOD+SHIFT+V              repeat=false    hotkey-overlay-title="VS Code" { spawn-sh "code"; }
+    // VS Code
+    MOD+SHIFT+V        repeat=false    hotkey-overlay-title="VS Code" { spawn-sh "code"; }
 
-    // Application Shortcuts
     // Terminal
    MOD+RETURN         repeat=false    hotkey-overlay-title="Kitty" { spawn-sh "kitty"; }
     //MOD+SHIFT+RETURN   repeat=false    hotkey-overlay-title="Kitty(firejail)" { spawn-sh "firejail kitty"; }
@@ -67,14 +71,17 @@ binds {
     // File Manager
     MOD+E              repeat=false    hotkey-overlay-title="Yazi" { spawn-sh "kitty -e yazi"; }
     MOD+SHIFT+E        repeat=false    hotkey-overlay-title="Thunar" { spawn "thunar"; }
-    MOD+ALT+E          repeat=false    hotkey-overlay-title="SUperfile" { spawn-sh "kitty -e spf"; }
+    MOD+ALT+E          repeat=false                                  { spawn-sh "kitty -e spf"; }
+
+    // Gemini
+    MOD+SHIFT+G              repeat=false     hotkey-overlay-title="Gemini-cli" { spawn-sh "kitty -e gemini"; }
 
     // Lock
     MOD+SHIFT+L        repeat=false    hotkey-overlay-title="Lock Screen: hyprlock" { spawn-sh "~/.config/hypr/hyprlock/lock.sh"; }
 
     // Center Column & Clipboard
     MOD+C              repeat=false    hotkey-overlay-title="Center Column" { center-column; }
-    MOD+SHIFT+C        repeat=false    hotkey-overlay-title="Center Visible Column"  { center-visible-columns; }
+    MOD+SHIFT+C        repeat=false                                         { center-visible-columns; } //hotkey-overlay-title="Center Visible Column"
     MOD+ALT+C         repeat=false    hotkey-overlay-title="Clipboard history"  { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // Media Keys
@@ -109,8 +116,6 @@ binds {
 
     // Tab
     MOD+G              repeat=false     hotkey-overlay-title="toggle column tabbed" { toggle-column-tabbed-display; }
-    // Gemini
-    MOD+SHIFT+G              repeat=false     hotkey-overlay-title="Gemini-cli" { spawn-sh "kitty -e gemini"; }
     
     // Move windows within workspace
     MOD+SHIFT+LEFT                      { move-column-left; }
@@ -141,18 +146,18 @@ binds {
     //MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
 
     // Workspace Management
-    MOD+WHEELSCROLLDOWN                 cooldown-ms=100 { focus-workspace-down; }
-    MOD+WHEELSCROLLUP                   cooldown-ms=100 { focus-workspace-up; }
+    //MOD+WHEELSCROLLDOWN                 cooldown-ms=100 { focus-workspace-down; }
+    //MOD+WHEELSCROLLUP                   cooldown-ms=100 { focus-workspace-up; }
 
     // Move windows to different workspaces - using wheel matches K/J pattern
-    MOD+SHIFT+WHEELSCROLLDOWN           cooldown-ms=100 { move-column-to-workspace-down; }
-    MOD+SHIFT+WHEELSCROLLUP             cooldown-ms=100 { move-column-to-workspace-up; }
+    //MOD+SHIFT+WHEELSCROLLDOWN           cooldown-ms=100 { move-column-to-workspace-down; }
+    //MOD+SHIFT+WHEELSCROLLUP             cooldown-ms=100 { move-column-to-workspace-up; }
 
     // Column navigation with mouse
-    MOD+WHEELSCROLLRIGHT                { focus-column-right; }
-    MOD+WHEELSCROLLLEFT                 { focus-column-left; }
-    MOD+CTRL+WHEELSCROLLRIGHT           { move-column-right; }
-    MOD+CTRL+WHEELSCROLLLEFT            { move-column-left; }
+    //MOD+WHEELSCROLLRIGHT                { focus-column-right; }
+    //MOD+WHEELSCROLLLEFT                 { focus-column-left; }
+    //MOD+CTRL+WHEELSCROLLRIGHT           { move-column-right; }
+    //MOD+CTRL+WHEELSCROLLLEFT            { move-column-left; }
 
     // Numbered Workspaces
     MOD+1                               { focus-workspace 1; }

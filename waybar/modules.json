@@ -1,13 +1,4 @@
 {
-  "group/top1": {
-    "orientation": "inherit",
-    "modules": [
-      "power-profiles-daemon",
-      "idle_inhibitor",
-      "custom/updates",
-      "custom/updates#icn"
-      ]
-  },
   "group/extras": {
     "orientation": "inherit",
     "drawer": {
@@ -18,6 +9,30 @@
     "modules": [
       "custom/menu",
       "tray"
+    ]
+  },
+  "group/networks": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "networks",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
+  },  
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "audio",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
     ]
   },
   "group/brightness": {
@@ -32,16 +47,16 @@
       "backlight/slider"
     ]
   },
-  "group/audio": {
+  "group/power-profile": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 400,
-      "children-class": "audio",
+      "children-class": "power-profile",
       "transition-left-to-right": false
     },
     "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
+      "battery",
+      "power-profiles-daemon"
     ]
   },
   "custom/cachy": {
@@ -52,7 +67,6 @@
   },
   "niri/workspaces": {
     "on-click": "activate",
-    //"format": " {icon}{index} ",
     "format": "{icon}",
     "format-icons": {
       "1": "壱",
@@ -73,13 +87,6 @@
       "4": [],
       "5": []
     }
-//    "format-icons": {
-      //"focused": "◉",
-      //"empty": "☓",
-      //"default": "◎",
-//      "default": "󰄰",
-//      "active": "󰄯"
-//    }
   },
   "cpu": {
     "format": "{icon}",
@@ -145,175 +152,128 @@
     },
     "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
-"mpd": {
-    //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    //"format-disconnected": "Disconnected ",
-    //"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "format": "{stateIcon}",
-    "format-disconnected": "",
-    "format-stopped": "{consumeIcon}",
-    "interval": 10,
-    "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
-    },
-    "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
-    },
-    "repeat-icons": {
-        "on": " "
-    },
-    "single-icons": {
-        "on": "1 "
-    },
-    "state-icons": {
-        "paused": "",
-        "playing": ""
-    },
-    "on-click": "rmpc remote keybind p",
-    "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) "
-    //"tooltip-format-disconnected": "MPD (disconnected)"
-},
-"mpris": {
-  "format": "<span size='14pt'>󰐎</span>",
-  "interval": 1,
-  "on-click": "playerctl play-pause",
-  "on-click-right": "playerctl next",
-  "on-click-middle": "playerctl previous",
-  "tooltip": true,
-  "tooltip-format": "{title}"
-},
-"custom/menu": {
-  "format": "<span size='16pt'>󰅃</span>",
-  "tooltip": false
-},
-"tray": {
-  "spacing": 16,
-  "reverse-direction": true,
-  "icon-size": 16,
-  "show-passive-items": false
-},
-"privacy": {
-  "icon-size": 14,
-  "transition-duration": 250,
-  "modules": [
-    {
-      "type": "screenshare",
-      "tooltip": false,
-    }
-  ],
-  "ignore": [
-    {
-      "type": "screenshare",
-      "name": "obs"
-    }
-  ]
-},
-"network": {
-  "format-icons": {
-    "wifi": [
-      "<span size='12pt'>󰤯</span>",
-      "<span size='12pt'>󰤟</span>",
-      "<span size='12pt'>󰤢</span>",
-      "<span size='12pt'>󰤥</span>",
-      "<span size='12pt'>󰤨</span>"
-    ],
-    "ethernet": "<span size='12pt'>󰈀</span>",
-    "disabled": "<span size='12pt'>󰤭</span>",
-    "disconnected": "<span size='12pt'>󰖪</span>"   //󰤩
+  "mpris": {
+    "format": "<span size='14pt'>󰐎</span>",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": true,
+    "tooltip-format": "{title}"
   },
-  "format-wifi": "{icon}",
-  "format-ethernet": "{icon}",
-  "format-disconnected": "{icon}",
-  "format-disabled": "{icon}",
-  "format-linked": "{ifname} (No IP)",
-  "interval": 5,
-  //"tooltip-format": "{essid}\t{gwaddr}",
-  "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-  "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-  "tooltip-format-disconnected": "Disconnected",
-  "on-click": "kitty --class=impala -e impala",
-  //"on-click-right": "rfkill toggle wifi",
-  "tooltip": true,
-  "max-length": 20
-},
-"bluetooth": {
-  "interval": 5,
-  "format-on": "<span size='14pt'>󰂯</span>",
-  "format-off": "<span size='14pt'>󰂲</span>",
-  "format-disabled": "<span size='14pt'>󰂲</span>",
-  "format-connected": "<span size='14pt'>󰂱</span>",
-  "format-no-controller": "span size='14pt'>󰂯</span>",
-  "tooltip": true,
-  "tooltip-format": "{device_enumerate}",
-  "tooltip-format-enumerate-connected": "{device_address}",
-  "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
-  "on-click": "kitty --class=bluetui -e bluetui",
-  "on-click-right": "rfkill toggle bluetooth"
-},
-"pulseaudio#microphone": {
-  "format": "{format_source}",
-  "format-source": "<span size='14pt'>󰍬</span>",
-  "format-source-muted": "<span size='14pt'>󰍭</span>",
-  "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-  "on-click-right": "pavucontrol -t 4",
-  "tooltip": false
-},
-"pulseaudio/slider": {
-  "min": 0,
-  "max": 100,
-  "orientation": "vertical"
-},
-"pulseaudio": {
-  "interval": 1,
-  "format": "{icon}",
-  "format-icons": [
-    "<span size='14pt'>󰕿</span>",
-    "<span size='14pt'>󰖀</span>",
-    "<span size='14pt'>󰕾</span>"
-  ],
-  "format-muted": "<span size='14pt'>󰝟</span>",
-  "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-  "on-click": "pavucontrol -t 3",
-  "reverse-scrolling": true,
-  "tooltip": true,
-  "tooltip-format": "Volume: {volume}%\n{desc}",
-  "ignored-sinks": [
-    "Easy Effects Sink"
-  ]
-},
-"pulseaudio#volume": {
-  "format": "{volume}"
-},
-
-"backlight/slider": {
-  "min": 0,
-  "max": 100,
-  "orientation": "vertical",
-  "device": "intel_backlight"
-},
-"backlight": {
-  "device": "intel_backlight",
-  "format": "{icon}",
-  "format-icons": [
-    "󰃚",
-    "󰃛",
-    "󰃜",
-    "󰃝",
-    "󰃞",
-    "󰃟",
-    "󰃠"
-  ],
-  "reverse-scrolling": true,
-  "smooth-scrolling-threshold": 0.2,
-  "tooltip": false
-},
-"backlight#percentage": {
+  "custom/menu": {
+    "format": "<span size='16pt'>󰅃</span>",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 10,
+    "reverse-direction": true,
+    "icon-size": 16,
+    "show-passive-items": false
+  },
+  "network": {
+    "format-icons": {
+      "wifi": [
+        "<span size='12pt'>󰤯</span>",
+        "<span size='12pt'>󰤟</span>",
+        "<span size='12pt'>󰤢</span>",
+        "<span size='12pt'>󰤥</span>",
+        "<span size='12pt'>󰤨</span>"
+      ],
+      "ethernet": "<span size='12pt'>󰈀</span>",
+      "disabled": "<span size='12pt'>󰤭</span>",
+      "disconnected": "<span size='12pt'>󰖪</span>"   //󰤩
+    },
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "format-linked": "{ifname} (No IP)",
+    "interval": 5,
+    //"tooltip-format": "{essid}\t{gwaddr}",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "kitty --class=impala -e impala",
+    //"on-click-right": "rfkill toggle wifi",
+    "tooltip": true,
+    "max-length": 20
+  },
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "<span size='14pt'>󰂯</span>",
+    "format-off": "<span size='14pt'>󰂲</span>",
+    "format-disabled": "<span size='14pt'>󰂲</span>",
+    "format-connected": "<span size='14pt'>󰂱</span>",
+    "format-no-controller": "span size='14pt'>󰂯</span>",
+    "tooltip": true,
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_address} | Battery: {device_battery_percentage}%",
+    "on-click": "kitty --class=bluetui -e bluetui",
+    "on-click-right": "rfkill toggle bluetooth"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span size='14pt'>󰍬</span>",
+    "format-source-muted": "<span size='14pt'>󰍭</span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol -t 4",
+    "tooltip": false
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "pulseaudio": {
+    "interval": 1,
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰕿</span>",
+      "<span size='14pt'>󰖀</span>",
+      "<span size='14pt'>󰕾</span>"
+    ],
+    "format-muted": "<span size='14pt'>󰝟</span>",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pavucontrol -t 3",
+    "reverse-scrolling": true,
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+  "pulseaudio#volume": {
+    "format": "{volume}"
+  },
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical",
+    "device": "intel_backlight"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "reverse-scrolling": true,
+    "smooth-scrolling-threshold": 0.2,
+    "tooltip": false
+  },
+  "backlight#percentage": {
     "device": "intel_backlight",
     "format": "{percent}",
-},
-
-"battery": {
+  },
+  "battery": {
     "format": "{icon}",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
@@ -355,24 +315,18 @@
     }
   },
   "battery#percentage": {
-	"format": "{capacity}",
+    "format": "{capacity}",
     //"tooltip-format": "{time}"
   },
-"custom/powermenu": {
-  "format": "<span size='13pt'>󰐥</span>",
-  "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
-  "tooltip": false
-},
-
-"idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰾪"
-        },
-        "tooltip-format-activated": "Idle Inhibitor Activated",
-        "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
-},
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
+    },
+    "tooltip-format-activated": "Idle Inhibitor Activated",
+    "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+  },
   "custom/updates": {
     "format": "{}",
     "return-type": "json",
@@ -391,22 +345,71 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output --color-semver-updates"
   },
-
-  // System tray
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  },
   "power-profiles-daemon": {
-  "format": "{icon}",
-  "tooltip-format": "Power profile: {profile}, Driver: {driver}",
-  "tooltip": true,
-  "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
-  },
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}, Driver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
   },
 
+  "custom/powermenu": {
+    "format": "<span size='13pt'>󰐥</span>",
+    "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
+    "tooltip": false
+  },
+
+"privacy": {
+  "icon-size": 14,
+  "transition-duration": 250,
+  "modules": [
+    {
+      "type": "screenshare",
+      "tooltip": false,
+    }
+  ],
+  "ignore": [
+    {
+      "type": "screenshare",
+      "name": "obs"
+    }
+  ]
+},
+
+"mpd": {
+    //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    //"format-disconnected": "Disconnected ",
+    //"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon}",
+    "format-disconnected": "",
+    "format-stopped": "{consumeIcon}",
+    "interval": 10,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "on-click": "rmpc remote keybind p",
+    "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) "
+    //"tooltip-format-disconnected": "MPD (disconnected)"
+}
+  
+  
+  
 }

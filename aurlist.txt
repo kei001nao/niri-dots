@@ -1,4 +1,5 @@
 awww-git
+bridge-utils
 clrsync-git
 crudini
 fresh-editor-bin
@@ -18,3 +19,4 @@ visual-studio-code-bin
 wallust
 waybar-module-pacman-updates-git
 wlroots-asan-git
+youtube-tui
